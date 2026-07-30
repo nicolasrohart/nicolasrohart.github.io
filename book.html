@@ -163,9 +163,9 @@
 
 <div class="viewer" id="viewer">
   <div class="topbar">
-    <a href="index.html" class="close-btn" aria-label="Close and return to site">&times;</a>
+    <a href="index.html" id="closeBtn" class="close-btn" aria-label="Close and return to site">&times;</a>
     <span class="brand">Nicolas Rohart</span>
-    <span class="counter" id="counter">1 / 62</span>
+    <span class="counter" id="counter">1 / 56</span>
   </div>
 
   <div class="nav-zone prev" id="prevZone" aria-label="Previous photo">
@@ -186,7 +186,7 @@
 </div>
 
 <script>
-  const TOTAL = 62;
+  const TOTAL = 56;
   const BASE = 'assets/book/';
   let current = 1;
 
@@ -234,10 +234,25 @@
     frame.classList.toggle('zoomed');
   });
 
+  function goBack(){
+    if (history.length > 1){
+      history.back();
+    } else {
+      window.location.href = 'index.html';
+    }
+  }
+
+  document.getElementById('closeBtn').addEventListener('click', function(e){
+    if (history.length > 1){
+      e.preventDefault();
+      goBack();
+    }
+  });
+
   document.addEventListener('keydown', (e) => {
     if (e.key === 'ArrowRight') next();
     else if (e.key === 'ArrowLeft') prev();
-    else if (e.key === 'Escape') window.location.href = 'index.html';
+    else if (e.key === 'Escape') goBack();
   });
 
   // swipe support
