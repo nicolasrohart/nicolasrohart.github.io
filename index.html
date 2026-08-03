@@ -59,12 +59,12 @@
     --line-dark: rgba(246,243,236,0.22);
   }
   *{box-sizing:border-box; margin:0; padding:0;}
-  html{scroll-behavior:smooth;}
+  html{scroll-behavior:smooth; font-size:clamp(16px, 1.15vw + 5px, 30px);}
   body{
     background:var(--paper);
     color:var(--ink);
     font-family:'Inter',sans-serif;
-    font-size:16px;
+    font-size:1rem;
     line-height:1.6;
     -webkit-font-smoothing:antialiased;
   }
@@ -84,16 +84,16 @@
   /* ---------- Title-block strip (top) ---------- */
   .titlebar{
     display:flex; justify-content:center; align-items:center;
-    padding:4px 5vw;
+    padding:0.35rem 5vw;
     font-family:'IBM Plex Mono',monospace;
-    font-size:11px;
+    font-size:0.72rem;
     letter-spacing:0.06em;
     color:var(--steel);
     border-bottom:1px solid var(--line);
     background:var(--paper);
     position:sticky; top:0; z-index:50;
   }
-  .titlebar-inner{display:flex; justify-content:space-between; align-items:center; width:100%; max-width:1200px; gap:16px;}
+  .titlebar-inner{display:flex; justify-content:space-between; align-items:center; width:100%; max-width:min(92vw, 2000px); gap:16px;}
   .titlebar span b{color:var(--ink); font-weight:500;}
 
   /* ---------- Local access banner (menu + contact) ---------- */
@@ -106,11 +106,11 @@
   }
   .la-menu{display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:14px;}
   .la-menu a{
-    font-family:'IBM Plex Mono',monospace; font-size:11.5px; font-weight:700; letter-spacing:0.06em;
+    font-family:'IBM Plex Mono',monospace; font-size:0.72rem; font-weight:700; letter-spacing:0.06em;
     text-transform:uppercase;
     color:var(--paper);
     background:linear-gradient(135deg, var(--oak-soft), var(--oak) 60%);
-    padding:9px 18px; border-radius:20px;
+    padding:0.56rem 1.12rem; border-radius:1.25rem;
     text-decoration:none; white-space:nowrap;
     text-shadow:0 1px 1px rgba(33,29,23,0.35), 0 -1px 0 rgba(255,255,255,0.12);
     box-shadow:0 3px 10px rgba(169,120,74,0.45), 0 1px 3px rgba(33,29,23,0.3);
@@ -155,16 +155,16 @@
   .production-link a.pill-btn:hover{background:var(--oak-soft); border-color:var(--oak-soft); transform:translateY(-1px); box-shadow:0 4px 10px rgba(33,29,23,0.3);}
   .la-contact{display:flex; flex-wrap:wrap; justify-content:center; gap:10px 28px;}
   .la-contact a{
-    font-family:'IBM Plex Mono',monospace; font-size:15px; font-weight:800; letter-spacing:0.02em;
+    font-family:'IBM Plex Mono',monospace; font-size:0.94rem; font-weight:800; letter-spacing:0.02em;
     color:var(--forest); text-decoration:none; white-space:nowrap;
   }
   .la-contact a:hover{color:var(--oak); text-decoration:underline;}
   .la-email-group{display:inline-flex; align-items:center; gap:9px;}
   .la-copy-btn{
-    font-family:'IBM Plex Mono',monospace; font-size:7px; font-weight:600; letter-spacing:0.02em;
+    font-family:'IBM Plex Mono',monospace; font-size:0.44rem; font-weight:600; letter-spacing:0.02em;
     text-transform:uppercase;
     color:var(--forest); background:var(--paper); border:1px solid var(--oak);
-    border-radius:2px; padding:1.5px 5px; cursor:pointer;
+    border-radius:0.12rem; padding:0.1rem 0.32rem; cursor:pointer;
     transition:background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
   }
   .la-copy-btn:hover{background:var(--oak); color:var(--paper);}
@@ -196,8 +196,8 @@
     pointer-events:none;
   }
   @media (max-width:900px){ .hero-illustration{width:120vw;} }
-  .hero-inner{max-width:1100px; position:relative;}
-  .hero-top{display:grid; grid-template-columns:minmax(0,1fr) minmax(220px,380px); column-gap:48px; align-items:start;}
+  .hero-inner{max-width:min(90vw, 1900px); position:relative;}
+  .hero-top{display:grid; grid-template-columns:minmax(0,1fr) minmax(220px,460px); column-gap:48px; align-items:start;}
   .hero-text{grid-column:1; grid-row:1; min-width:0;}
   .hero-photo{
     grid-column:2; grid-row:1; align-self:start; margin-top:40px;
@@ -223,7 +223,7 @@
   .hero h1 em{font-style:italic; color:var(--oak-soft); font-weight:450;}
   .hero p.lede{
     margin-top:28px;
-    max-width:52ch;
+    max-width:68ch;
     font-size:1.1rem;
     color:rgba(246,243,236,0.82);
     font-weight:400;
@@ -247,7 +247,7 @@
   /* ---------- Section shells ---------- */
   section{padding:11vh 5vw; position:relative;}
   .intro{
-    max-width:760px; margin:0 auto; padding:7vh 5vw 6vh; text-align:center;
+    max-width:min(72vw, 1400px); margin:0 auto; padding:7vh 5vw 6vh; text-align:center;
   }
   .intro p{font-size:1.15rem; line-height:1.55; font-family:'Inter',sans-serif; font-weight:400; color:var(--ink); letter-spacing:-0.005em;}
   .intro p b{font-weight:600; color:var(--forest);}
@@ -257,11 +257,11 @@
   }
   .section-label .eyebrow{margin-bottom:12px; display:block;}
   .section-label h2{font-size:1.9rem;}
-  .section-label p{max-width:52ch; margin:14px auto 0; color:var(--steel); font-size:0.98rem;}
+  .section-label p{max-width:66ch; margin:14px auto 0; color:var(--steel); font-size:0.98rem;}
 
   /* ---------- The chain ---------- */
   .chain{
-    max-width:1040px; margin:0 auto;
+    max-width:min(88vw, 1750px); margin:0 auto;
     position:relative;
     padding-left:56px;
   }
@@ -370,7 +370,7 @@
   /* ---------- Technical Profile ---------- */
   .skills{background:var(--paper);}
   .skills-grid{
-    max-width:980px; margin:4vh auto 0;
+    max-width:min(88vw, 1750px); margin:4vh auto 0;
     display:grid; grid-template-columns:repeat(3,1fr); gap:1px;
     background:var(--line);
     border:1px solid var(--line);
@@ -398,7 +398,7 @@
   .research .section-label h2{color:var(--paper);}
   .research .section-label p{color:rgba(246,243,236,0.7);}
   .research-grid{
-    max-width:980px; margin:6vh auto 0;
+    max-width:min(88vw, 1750px); margin:6vh auto 0;
     display:grid; grid-template-columns:repeat(3,1fr); gap:1px;
     background:var(--line-dark);
   }
@@ -412,7 +412,7 @@
 
   /* ---------- CTA ---------- */
   .cta{
-    max-width:760px; margin:0 auto; text-align:center; padding:9vh 5vw;
+    max-width:min(72vw, 1400px); margin:0 auto; text-align:center; padding:9vh 5vw;
   }
   .cta h2{font-size:2.1rem; max-width:20ch; margin:0 auto 20px;}
   html[lang="fr"] .cta h2{max-width:34ch;}
@@ -450,7 +450,7 @@
   @media (max-width:640px){ .lang-marker span{font-size:1.6rem;} }
   .local-section{ padding:7vh 5vw; background:var(--paper);}
   .local-section.alt{ background:var(--paper-dim); }
-  .local-inner{max-width:900px; margin:0 auto;}
+  .local-inner{max-width:min(88vw, 1750px); margin:0 auto;}
   .local-section h2{font-size:1.9rem; margin-top:10px;}
   .local-lede{margin-top:16px; font-size:1.05rem; color:var(--steel); max-width:56ch;}
   .local-grid{margin-top:36px; display:grid; grid-template-columns:1.1fr 0.9fr; gap:44px; align-items:start;}
@@ -473,7 +473,7 @@
     padding:6vh 5vw 4vh;
   }
   .contact-inner{
-    max-width:1040px; margin:0 auto;
+    max-width:min(88vw, 1750px); margin:0 auto;
     display:flex; justify-content:space-between; align-items:flex-end; gap:40px; flex-wrap:wrap;
   }
   footer h2{font-size:1.9rem; max-width:12ch; color:var(--paper);}
@@ -491,7 +491,7 @@
   .copy-btn:hover{opacity:1; border-color:var(--oak-soft); color:var(--oak-soft);}
 
   .footer-titleblock{
-    max-width:1040px; margin:8vh auto 0;
+    max-width:min(88vw, 1750px); margin:8vh auto 0;
     border-top:1px solid var(--line-dark);
     padding-top:18px;
     display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;
@@ -499,7 +499,7 @@
     color:rgba(246,243,236,0.45);
   }
   .legal-row{
-    max-width:1040px; margin:14px auto 0;
+    max-width:min(88vw, 1750px); margin:14px auto 0;
     display:flex; justify-content:space-between; align-items:baseline; gap:20px; flex-wrap:wrap;
   }
   .legal-mentions{
@@ -523,11 +523,11 @@
   <div><b>Nicolas Rohart</b></div>
   <div class="lang-switch" role="group" aria-label="Language switcher">
     <button type="button" class="lang-btn" data-lang="fr" onclick="setLang('fr')">
-      <svg width="34" height="22" viewBox="0 0 3 2" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="1" height="2" x="0" fill="#0055A4"/><rect width="1" height="2" x="1" fill="#FFFFFF"/><rect width="1" height="2" x="2" fill="#EF4135"/></svg>
+      <svg width="2.1em" height="1.35em" viewBox="0 0 3 2" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="1" height="2" x="0" fill="#0055A4"/><rect width="1" height="2" x="1" fill="#FFFFFF"/><rect width="1" height="2" x="2" fill="#EF4135"/></svg>
       FR
     </button>
     <button type="button" class="lang-btn" data-lang="en" onclick="setLang('en')">
-      <svg width="34" height="22" viewBox="0 0 60 30" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="60" height="30" fill="#00247d"/><path d="M0,0 60,30M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30M60,0 0,30" stroke="#cf142b" stroke-width="2"/><path d="M30,0V30M0,15H60" stroke="#fff" stroke-width="10"/><path d="M30,0V30M0,15H60" stroke="#cf142b" stroke-width="6"/></svg>
+      <svg width="2.1em" height="1.35em" viewBox="0 0 60 30" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="60" height="30" fill="#00247d"/><path d="M0,0 60,30M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30M60,0 0,30" stroke="#cf142b" stroke-width="2"/><path d="M30,0V30M0,15H60" stroke="#fff" stroke-width="10"/><path d="M30,0V30M0,15H60" stroke="#cf142b" stroke-width="6"/></svg>
       EN
     </button>
   </div>
@@ -874,9 +874,9 @@
   /* ---------- Language switcher ---------- */
   .lang-switch{display:flex; gap:4px;}
   .lang-btn{
-    font-family:'IBM Plex Mono',monospace; font-size:11px; font-weight:700; letter-spacing:0.02em;
+    font-family:'IBM Plex Mono',monospace; font-size:0.69rem; font-weight:700; letter-spacing:0.02em;
     color:var(--steel); background:transparent; border:1px solid var(--line);
-    border-radius:14px; padding:2px 8px 2px 6px; cursor:pointer;
+    border-radius:0.9rem; padding:0.13rem 0.5rem 0.13rem 0.38rem; cursor:pointer;
     transition:background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
     display:inline-flex; align-items:center; gap:5px; line-height:1;
   }
