@@ -1,23 +1,25 @@
 <!DOCTYPE html>
-<html lang="en" translate="no">
+<html lang="fr" translate="no">
 <head>
 <meta charset="UTF-8">
 <meta name="google" content="notranslate">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nicolas Rohart - Timber Value-Chain Specialist</title>
-<meta name="description" content="Forestry, curved-timber design, robotic shaping (KUKA/Grasshopper) and on-site construction - the full chain, one person, 15 years.">
+<title>Nicolas Rohart - Élagage, abattage, construction</title>
+<meta name="description" content="J'interviens sur toute la filière du bois - gestion forestière, exploitation, élagage et abattage complexe, conception numérique, façonnage robotisé et construction sur site.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://nicolasrohart.com/">
 
 <!-- Open Graph / link previews (LinkedIn, email, Slack) -->
 <meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:locale:alternate" content="en_GB">
 <meta property="og:site_name" content="Nicolas Rohart">
-<meta property="og:title" content="Nicolas Rohart - Timber Value-Chain Specialist">
-<meta property="og:description" content="Forestry, robotic shaping (KUKA/Grasshopper), and on-site construction - the full chain, one person, 15 years.">
+<meta property="og:title" content="Nicolas Rohart - Élagage, abattage, construction">
+<meta property="og:description" content="J'interviens sur toute la filière du bois - gestion forestière, exploitation, élagage et abattage complexe, conception numérique, façonnage robotisé et construction sur site.">
 <meta property="og:image" content="https://nicolasrohart.com/assets/og-cover.jpg">
 <meta property="og:url" content="https://nicolasrohart.com/">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Nicolas Rohart - Timber Value-Chain Specialist">
+<meta name="twitter:title" content="Nicolas Rohart - Élagage, abattage, construction">
 <meta name="twitter:description" content="Forestry, robotic shaping (KUKA/Grasshopper), and on-site construction - the full chain, one person, 15 years.">
 <meta name="twitter:image" content="https://nicolasrohart.com/assets/og-cover.jpg">
 
@@ -160,11 +162,11 @@
   }
   .la-menu{display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:14px;}
   .la-menu a{
-    font-family:'IBM Plex Mono',monospace; font-size:0.72rem; font-weight:700; letter-spacing:0.06em;
+    font-family:'IBM Plex Mono',monospace; font-size:0.92rem; font-weight:700; letter-spacing:0.05em;
     text-transform:uppercase;
     color:var(--paper);
     background:linear-gradient(135deg, var(--oak-soft), var(--oak) 60%);
-    padding:0.56rem 1.12rem; border-radius:1.25rem;
+    padding:0.74rem 1.5rem; border-radius:1.6rem;
     text-decoration:none; white-space:nowrap;
     text-shadow:0 1px 1px rgba(33,29,23,0.35), 0 -1px 0 rgba(255,255,255,0.12);
     box-shadow:0 3px 10px rgba(169,120,74,0.45), 0 1px 3px rgba(33,29,23,0.3);
@@ -181,6 +183,27 @@
   }
   .la-menu a:nth-child(2)::before{ animation-delay:0.4s; }
   .la-menu a:nth-child(3)::before{ animation-delay:0.8s; }
+  .la-menu a:nth-child(4)::before{ animation-delay:1.2s; }
+  .devis-cta{
+    display:inline-block; margin-top:18px;
+    font-family:'IBM Plex Mono',monospace; font-size:0.92rem; font-weight:700;
+    letter-spacing:0.05em; text-transform:uppercase;
+    color:var(--paper);
+    background:linear-gradient(135deg, var(--oak-soft), var(--oak) 60%);
+    padding:0.8rem 1.7rem; border-radius:1.6rem;
+    text-decoration:none; white-space:nowrap;
+    text-shadow:0 1px 1px rgba(33,29,23,0.35), 0 -1px 0 rgba(255,255,255,0.12);
+    box-shadow:0 3px 12px rgba(169,120,74,0.5), 0 1px 3px rgba(33,29,23,0.3);
+    border:1px solid var(--oak);
+    transition:transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .devis-cta:hover{ transform:translateY(-2px); box-shadow:0 6px 18px rgba(169,120,74,0.6); }
+
+  .la-menu a.la-devis{
+    background:linear-gradient(135deg, var(--forest-2), var(--forest) 60%);
+    border-color:var(--forest);
+    box-shadow:0 3px 10px rgba(32,43,36,0.42), 0 1px 3px rgba(33,29,23,0.3);
+  }
   @keyframes la-shine{
     0%, 40%{ left:-75%; }
     60%, 100%{ left:130%; }
@@ -223,8 +246,8 @@
   }
   .la-copy-btn:hover{background:var(--oak); color:var(--paper);}
   @media (max-width:640px){
-    .la-menu{gap:8px;}
-    .la-menu a{font-size:10.5px; padding:7px 14px;}
+    .la-menu{gap:10px;}
+    .la-menu a{font-size:13.5px; padding:11px 18px; letter-spacing:0.03em;}
     .la-contact{gap:6px 18px;}
     .la-contact a{font-size:13px;}
     .la-copy-btn{font-size:6.5px; padding:1px 4px;}
@@ -357,6 +380,18 @@
     display:grid; grid-template-columns:1.05fr 0.95fr; gap:52px; align-items:start;
   }
   @media (max-width:840px){ .chain-grid{grid-template-columns:1fr;} .chain{padding-left:40px;} .chain-node{left:-40px; width:32px; height:32px; font-size:11px;} }
+
+  /* mobile : la photo du bloc remonte entre le sur-titre et le titre,
+     pour qu'elle arrive avant le texte au lieu d'apres */
+  @media (max-width:840px){
+    .chain-grid{display:flex; flex-direction:column; gap:0;}
+    .chain-grid > div:first-of-type{display:contents;}
+    .chain-grid > div:first-of-type > .eyebrow{order:1;}
+    .chain-grid > div:not(:first-of-type){order:2; margin:2px 0 20px;}
+    .chain-grid > div:first-of-type > *:not(.eyebrow){order:3;}
+    /* la derniere image ne doit plus recouvrir le texte une fois en une seule colonne */
+    #abattages-complexes .photo-slot.natural{width:100%; margin-top:26px;}
+  }
 
   .chain-step h3{font-size:1.55rem; margin-bottom:14px;}
   .chain-step .eyebrow{margin-bottom:10px; display:block;}
@@ -615,8 +650,9 @@
 <div class="local-access">
   <nav class="la-menu">
     <a href="#hero" data-key="nav_construction">Construction &amp; Robotique</a>
-    <a href="#abattages-complexes" data-key="nav_elagage">Elagage &amp; abattage complexe</a>
+    <a href="#abattages-complexes" data-key="nav_elagage">Élagage &amp; abattage complexe</a>
     <a href="#exploitation-forestiere" data-key="nav_exploitation">Exploitation forestière</a>
+    <a href="devis.html" class="la-devis" data-key="nav_devis">Demander un devis</a>
   </nav>
   <div class="la-contact">
     <a href="tel:+33768679555">07 68 67 95 55</a>
@@ -654,8 +690,8 @@
   <div class="hero-inner">
     <div class="hero-top">
     <div class="hero-text">
-      <h1 data-key="hero_h1">From standing tree<br>to finished <em>structure.</em></h1>
-      <p class="lede" data-key="hero_lede">I operate across the entire timber value chain - forest management and harvesting, computational design, robotic shaping of curved timber, and on-site construction - including the digital workflows that connect each stage.</p>
+      <h1 data-key="hero_h1">De l'arbre debout<br>à la <em>structure finie</em></h1>
+      <p class="lede" data-key="hero_lede">J'interviens sur toute la filière du bois - gestion forestière, exploitation, conception numérique, façonnage robotisé des bois bruts et construction sur site.</p>
     </div>
     <div class="hero-photo">
       <img src="assets/hero-forest.jpg" alt="Close-up of a felled trunk showing tree rings and grain" loading="lazy">
@@ -663,21 +699,21 @@
     </div>
     <div class="hero-fields">
       <div>BASE<b>Limousin, France</b></div>
-      <div data-key="hero_exp">EXPERIENCE<b>15 years, full chain</b></div>
-      <div data-key="hero_looking">LOOKING FOR<b>R&D partnership</b></div>
-      <div data-key="hero_open">OPEN TO<b>Worldwide</b></div>
+      <div data-key="hero_exp">EXPÉRIENCE<b>15 ans de filière</b></div>
+      <div data-key="hero_looking">RECHERCHE<b>Partenariat R&D</b></div>
+      <div data-key="hero_open">OUVERT À<b>Monde</b></div>
     </div>
   </div>
 </header>
 
 <div class="intro reveal">
-  <p data-key="intro_p">Learning forestry by living in the forest, and robotics alongside an expert, I can now generate cutting toolpaths for a KUKA robot directly from scanned tree geometry, enabling it to follow the unique form of each trunk. I follow projects all the way through, from standing trees I select to the finished structure.</p>
+  <p data-key="intro_p">Formé à l'exploitation à l'école, à la forêt en y habitant et enfin à la robotique aux côtés d'un expert, je peux désormais aussi bien semer une pépinière forestière d'enrichissement que générer des trajectoires d'usinage pour un robot. Au besoin, je suis les projets de construction de bout en bout, des arbres que je choisis en forêt jusqu'à la structure finie.</p>
 </div>
 
 <section class="section-label reveal">
-  <span class="eyebrow" data-key="chain_eyebrow">The Chain</span>
-  <h2 data-key="chain_h2">Five stages, one hand throughout</h2>
-  <p data-key="chain_p">Each stage below feeds the next - a tree felled in stage two becomes a robot toolpath in stage four, and a client's home in stage five stands in the same landscape assessed in stage one.</p>
+  <span class="eyebrow" data-key="chain_eyebrow">une filière</span>
+  <h2 data-key="chain_h2">Cinq étapes, une vision du début à la fin</h2>
+  <p data-key="chain_p">Chaque étape ci-dessous nourrit la suivante - un arbre abattu à l'étape deux devient une trajectoire de robot à l'étape quatre, et la maison d'un client à l'étape cinq se dresse dans le paysage considéré à l'étape un.</p>
 </section>
 
 <div class="chain">
@@ -686,13 +722,13 @@
     <div class="chain-node">01</div>
     <div class="chain-grid">
       <div>
-        <span class="eyebrow" data-key="step1_eyebrow">Forest &amp; Silviculture</span>
-        <h3 data-key="step1_h3">Managing forest for the world it becomes</h3>
-        <p data-key="step1_p1">I work independently, across the whole process - forest management, felling, every stage of timber transformation, and sale. The goal is not short-term extraction, but ensuring that forests remain living, resilient ecosystems capable of supporting future generations despite existential obstacles: climate change, increasing human pressure, and the persistent belief that incremental adjustments will be enough.</p>
-        <p data-key="step1_p2">Beyond declared certification schemes, my team developed <i>Bois Suivis</i> - literally, "tracked timber" - a field-verification protocol that lets a wood's end user check, on the ground, that stated forestry practices were actually followed. It's built to be checked, not just declared: a concrete proposal for keeping this world habitable.</p>
+        <span class="eyebrow" data-key="step1_eyebrow">Forêt &amp; Sylviculture</span>
+        <h3 data-key="step1_h3">Soigner la forêt pour le monde qu'elle devient</h3>
+        <p data-key="step1_p1">Je travaille en indépendant, sur l'ensemble du processus - gestion forestière, abattage, débardage, transformation du bois, et vente. L'objectif n'est pas d'extraire à court terme, mais de garantir que les forêts restent des écosystèmes vivants et résilients, capables de soutenir les générations futures malgré des obstacles existentiels : le changement climatique, une pression humaine croissante, et la croyance persistante que des ajustements progressifs suffiront.</p>
+        <p data-key="step1_p2">Au-delà des labels de certification déclaratifs, mon équipe développe les <i>Bois Suivis</i> - un protocole de vérification de terrain qui permet à l'utilisateur final du bois de constater de ses propres yeux que les pratiques forestières annoncées ont bien été suivies. Conçu pour être vérifié, et opposable : une proposition concrète d'engagement pour un monde habitable.</p>
         <div class="callout">
-          <b data-key="step1_callout_title">Tracked timber - in one line</b>
-          <span data-key="step1_callout_text">A traceable, on-site-verifiable set of forestry commitments, designed to go beyond label compliance - a forestry project anyone can understand and recognize.</span>
+          <b data-key="step1_callout_title">Bois suivi - en une ligne</b>
+          <span data-key="step1_callout_text">Un ensemble d'engagements forestiers traçables et vérifiables sur site, conçu pour aller au-delà de la conformité aux labels - un projet sylvicole que chacun peut comprendre et reconnaître.</span>
         </div>
       </div>
       <div class="photo-slot has-image">
@@ -705,10 +741,10 @@
     <div class="chain-node">02</div>
     <div class="chain-grid">
       <div>
-        <span class="eyebrow" data-key="step2_eyebrow">Harvest &amp; Extraction</span>
-        <h3 data-key="step2_h3">Felling and skidding, hands-on</h3>
-        <p data-key="step2_p1">I fell and extract the timber myself - it keeps me in direct feedback with the rest of the chain. What a tree does in the forest, on the workshop floor, and on a real construction site all shape each other, within the same workflow - not just on paper.</p>
-        <p data-key="step2_p2">Twelve years ago, I built my own skidding vehicle from a repurposed 4x4 fire-service truck chassis - new bodywork, crane installation, structural welding, taken through individual type-approval for road use. This original forestry machine lets me control the quality of the work on site directly, and adapt harvesting methods to each site's conditions.</p>
+        <span class="eyebrow" data-key="step2_eyebrow">Coupe &amp; Débardage</span>
+        <h3 data-key="step2_h3">La matière en direct</h3>
+        <p data-key="step2_p1">Je bûcheronne et débarde les bois moi-même - ce qui me place en contact physique direct avec les fibres ligneuses, dès le départ. Ce qu'un arbre devient en forêt, à l'atelier, et sur un chantier de construction s'influencent mutuellement.</p>
+        <p data-key="step2_p2">Il y a douze ans, j'ai construit mon propre engin de débardage à partir d'un châssis de camion 4x4 (service incendie reconverti) - carrosserie, installation d'une grue, soudure structurelle,... et enfin réception à titre isolé pour la circulation routière. Cette machine originale me permet de contrôler précisément la qualité du travail sur le site.</p>
       </div>
       <div class="photo-slot has-image">
         <img src="assets/stage2-harvest.jpg" alt="KUKA robotic arm sawing a curved log, close-up" loading="lazy">
@@ -721,9 +757,9 @@
     <div class="chain-grid">
       <div>
         <span class="eyebrow">Design</span>
-        <h3 data-key="step3_h3">Round, curved timber structures, drawn to fit the site</h3>
-        <p data-key="step3_p1">I design custom timber buildings from real trunks - round, naturally curved - fitted to each client's brief and often to an existing building I need to design around. Robotic shaping (stage four) makes this kind of natural, non-standard geometry buildable at a fraction of the previous cost.</p>
-        <p data-key="step3_p2">I draw in Rhino 3D, then bring the proposal to life in TwinMotion - compositing the new structure into a photogrammetry scan of the existing site - for near-photorealistic renders that clients can already picture themselves in.</p>
+        <h3 data-key="step3_h3">Structures en bois ronds et courbes,<br>sur-mesure</h3>
+        <p data-key="step3_p1">Je conçois les propositions de bâtiments à partir de troncs réels - leurs formes naturelles s'adaptent aux souhaits des clients, et réciproquement. Le façonnage robotisé (étape quatre) rend ce type de géométrie non standard réalisable pour une fraction du coût auparavant nécessaire.</p>
+        <p data-key="step3_p2">Je dessine sous Rhino 3D, puis donne vie aux propositions dans TwinMotion. Les nouvelles structures trouvent leur place dans les scans des sites réels, pour des rendus dans lesquels les clients peuvent déjà se projeter.</p>
       </div>
       <div class="photo-slot wide step3-photo has-image">
         <img src="assets/stage3-design.jpg" alt="Photorealistic render of a stone building (mairie) with an integrated solar carport, existing site" loading="lazy">
@@ -735,18 +771,18 @@
     <div class="chain-node">04</div>
     <div class="chain-grid">
       <div>
-        <span class="eyebrow" data-key="step4_eyebrow">Robotic Shaping</span>
-        <h3 data-key="step4_h3">Toolpaths that follow the tree, not the other way around</h3>
-        <p data-key="step4_p1">In collaboration with my mentor <a href="https://robotfaber.com/" class="inline-link" target="_blank" rel="noopener">Ludovic Mallegol</a>, I develop parametric workflows that generate cutting toolpaths for a seven-axis robot. The work is carried out at <a href="https://manufacture-chataignier.fr/" class="inline-link" target="_blank" rel="noopener">La Manufacture du Châtaignier</a> - the wood fabrication workshop of <a href="https://www.coop-montsetbarrages.fr/" class="inline-link" target="_blank" rel="noopener">Coop Monts et Barrages</a>, an emerging innovation cluster based on a working farm.</p>
-        <p data-key="step4_p2">The aim: let the robot adapt to the tree's actual curvature, rather than forcing the natural shape into a standard, rectilinear beam - carrying forward the genius of the living world. After two years of development, we're beginning to publish our results: "<a href="https://rdcu.be/fto0e" class="inline-link" target="_blank" rel="noopener">The tree dictates the shape: reversing the industrial paradigm in rural areas</a>", in Construction Robotics (Springer).<br>And production is under way :</p>
+        <span class="eyebrow" data-key="step4_eyebrow">Façonnage robotisé</span>
+        <h3 data-key="step4_h3">Un outil qui suit l'arbre, au millimètre près</h3>
+        <p data-key="step4_p1">En collaboration avec mon mentor <a href="https://robotfaber.com/" class="inline-link" target="_blank" rel="noopener">Ludovic Mallegol</a>, je développe des flux paramétriques qui génèrent les trajectoires d'usinage pour un robot à sept axes. Le travail est mené à <a href="https://manufacture-chataignier.fr/" class="inline-link" target="_blank" rel="noopener">La Manufacture du Châtaignier</a> - l'atelier de fabrication bois de la <a href="https://www.coop-montsetbarrages.fr/" class="inline-link" target="_blank" rel="noopener">Coop Monts et Barrages</a>, un pôle d'innovation émergent adossé à une ferme de production.</p>
+        <p data-key="step4_p2">Le robot s'adapte à la courbure réelle et unique de chaque arbre, plutôt que de forcer la forme naturelle dans une poutre standard et rectiligne - une façon de prolonger le génie du vivant en quelque sorte. Après deux ans de développement, nous commençons à publier nos résultats : "<a href="https://rdcu.be/fto0e" class="inline-link" target="_blank" rel="noopener">The tree dictates the shape: reversing the industrial paradigm in rural areas</a>", dans Construction Robotics (Springer).<br>Et la production est déjà en cours :</p>
       </div>
       <div>
         <div class="photo-slot wide has-image">
           <img src="assets/stage4-robot.jpg" alt="KUKA robotic arm cutting a curved log with a chainsaw attachment in the workshop" loading="lazy">
         </div>
         <div class="callout callout-spaced">
-          <b data-key="step4_callout_title">Custom 3D scanner</b>
-          <span data-key="step4_callout_text">A 3m trunk becomes a 600,000-point cloud in 3.5 minutes - fast enough for continuous production, with no downtime reloading the timber.</span>
+          <b data-key="step4_callout_title">Scanner 3D dédié</b>
+          <span data-key="step4_callout_text">Un tronc de 3 m devient un nuage de 600 000 points en 3,5 minutes - assez rapide pour une production en flux tendu, sans manutention intermédiaire du bois.</span>
         </div>
       </div>
     </div>
@@ -761,16 +797,16 @@
         <img src="assets/joint-detail.jpg" alt="Finished wood-framed structure, assembled and standing on site" loading="lazy">
       </div>
     </div>
-    <span class="production-link"><a href="book.html" class="pill-btn" data-key="prod_link">&rarr; view more projects</a></span>
+    <span class="production-link"><a href="book.html" class="pill-btn" data-key="prod_link">&rarr; voir plus de projets</a></span>
   </div>
 
   <div class="chain-step reveal">
     <div class="chain-node">05</div>
     <div class="chain-grid">
       <div>
-        <span class="eyebrow" data-key="step5_eyebrow">On-Site Building</span>
-        <h3 data-key="step5_h3">From foundation to finished frame</h3>
-        <p data-key="step5_p1">I install the finished structures myself on client sites - from site preparation and foundations to the final timber frame assembly - combining traditional timber craftsmanship with the precision of robotic fabrication. Trees can remain standing for decades, sometimes centuries - the very same level of structural stability we expect from a building. They are, in fact, a powerful source of inspiration.</p>
+        <span class="eyebrow" data-key="step5_eyebrow">Construction sur site</span>
+        <h3 data-key="step5_h3">Des fondations à la structure finie</h3>
+        <p data-key="step5_p1">Je propose deux modalités distinctes à mes clients : la taille sur mesure des pièces de bois sur plans fournis ; ou le suivi complet du chantier de construction. Pour le montage sur site, je m'appuie sur la qualification de charpentiers expérimentés et j'accompagne le choix des autres corps de métier.<br>Un arbre tient debout plusieurs décennies, voire des siècles, juste avec de l'eau, de l'air, du sol et de la lumière - difficile de trouver meilleure source d'inspiration pour construire un bâtiment écologique et durable.</p>
       </div>
       <div class="photo-slot has-image">
         <img src="assets/stage5-site.jpg" alt="Wood-framed pergola built onto a traditional stone house" loading="lazy" class="img-pergola">
@@ -782,31 +818,31 @@
 
 <section class="skills reveal">
   <div class="section-label">
-    <span class="eyebrow" data-key="skills_eyebrow">Technical Profile</span>
-    <h2 data-key="skills_h2">At a glance</h2>
+    <span class="eyebrow" data-key="skills_eyebrow">Profil technique</span>
+    <h2 data-key="skills_h2">En un coup d'œil</h2>
   </div>
   <div class="skills-grid">
     <div class="skills-col">
-      <span class="eyebrow" data-key="skills_col1">Forestry</span>
+      <span class="eyebrow" data-key="skills_col1">Foresterie</span>
       <ul>
-        <li data-key="skills_c1_li1">Forest assessment</li>
-        <li data-key="skills_c1_li2">Silviculture</li>
-        <li data-key="skills_c1_li3">Timber harvesting</li>
+        <li data-key="skills_c1_li1">Diagnostic forestier</li>
+        <li data-key="skills_c1_li2">Sylviculture</li>
+        <li data-key="skills_c1_li3">Récolte de bois</li>
       </ul>
     </div>
     <div class="skills-col">
-      <span class="eyebrow" data-key="skills_col2">Digital Fabrication</span>
+      <span class="eyebrow" data-key="skills_col2">Fabrication numérique</span>
       <ul>
-        <li data-key="skills_c2_li1">Parametric design → toolpath<span class="tools-note">(Rhino / Grasshopper / KukaPRC)</span></li>
-        <li data-key="skills_c2_li2">Commercial renders<span class="tools-note">(MeshRoom / TwinMotion)</span></li>
+        <li data-key="skills_c2_li1">Conception paramétrique<br>&rarr; trajectoire d'outil<span class="tools-note">(Rhino / Grasshopper / KukaPRC)</span></li>
+        <li data-key="skills_c2_li2">Rendus commerciaux<span class="tools-note">(MeshRoom / TwinMotion)</span></li>
       </ul>
     </div>
     <div class="skills-col">
       <span class="eyebrow">Construction</span>
       <ul>
-        <li data-key="skills_c3_li1">Design</li>
-        <li data-key="skills_c3_li2">Robot operation</li>
-        <li data-key="skills_c3_li3">Site implementation</li>
+        <li data-key="skills_c3_li1">Conception</li>
+        <li data-key="skills_c3_li2">Pilotage du robot</li>
+        <li data-key="skills_c3_li3">Installation sur site</li>
       </ul>
     </div>
   </div>
@@ -814,43 +850,43 @@
 
 <section class="research reveal">
   <div class="section-label">
-    <span class="eyebrow" data-key="research_eyebrow">Research &amp; Recognition</span>
-    <h2 data-key="research_h2">Where this work sits in the field</h2>
-    <p data-key="research_p">This is a small, fast-moving international research area. Here's where we fit in it.</p>
+    <span class="eyebrow" data-key="research_eyebrow">Recherche &amp; Reconnaissance</span>
+    <h2 data-key="research_h2">La place de ce travail dans le domaine</h2>
+    <p data-key="research_p">Un champ de recherche international restreint, et en plein essor.</p>
   </div>
   <div class="research-grid">
     <div class="research-card">
       <span class="eyebrow">Publication</span>
       <h4>"<a href="https://rdcu.be/fto0e" class="inline-link" target="_blank" rel="noopener">The tree dictates the shape: reversing the industrial paradigm in rural areas</a>"</h4>
-      <p data-key="research_card1_p">Peer-reviewed article, <i>Construction Robotics</i> (Springer), on scan-to-trajectory robotic shaping of natural curved timber.</p>
+      <p data-key="research_card1_p">Article évalué par des pairs, <i>Construction Robotics</i> (Springer), sur le façonnage robotisé des bois courbes, trajectoires produites à partir de scan 3D.</p>
     </div>
     <div class="research-card">
-      <span class="eyebrow" data-key="research_card2_eyebrow">Aug 2026</span>
+      <span class="eyebrow" data-key="research_card2_eyebrow">Août 2026</span>
       <h4>ROB|ARCH-adjacent workshop, Aarhus School of Architecture</h4>
-      <p data-key="research_card2_p">Presenting our workflow alongside the CITA - Aarhus University - SDU Odense research network working on robotic free-form timber fabrication.</p>
+      <p data-key="research_card2_p">Présentation de nos travaux aux côtés du réseau de recherche CITA - Université d'Aarhus - SDU Odense, dédié à la fabrication robotisée de formes libres en bois.</p>
     </div>
     <div class="research-card">
-      <span class="eyebrow" data-key="research_card3_eyebrow">Network</span>
-      <h4 data-key="research_card3_h4">In collaboration with IBOIS Lausanne, GC2D Egletons and IUT Limoges</h4>
-      <p data-key="research_card3_p">Working with <a href="https://www.epfl.ch/labs/ibois/" class="inline-link" target="_blank" rel="noopener">IBOIS - Timber Construction Laboratory, EPFL Lausanne</a>, <a href="https://www.unilim.fr/recherche-gc/" class="inline-link" target="_blank" rel="noopener">GC2D - Civil Engineering, Diagnosis and Durability Laboratory, Egletons</a>, and the <a href="https://www.iut.unilim.fr/" class="inline-link" target="_blank" rel="noopener">IUT du Limousin - Civil Engineering Department, Limoges</a>.</p>
+      <span class="eyebrow" data-key="research_card3_eyebrow">Réseau</span>
+      <h4 data-key="research_card3_h4">En collaboration avec IBOIS Lausanne, GC2D Égletons et l'IUT de Limoges</h4>
+      <p data-key="research_card3_p">En partenariat avec <a href="https://www.epfl.ch/labs/ibois/" class="inline-link" target="_blank" rel="noopener">IBOIS - Laboratoire de construction bois, EPFL Lausanne</a>, <a href="https://www.unilim.fr/recherche-gc/" class="inline-link" target="_blank" rel="noopener">GC2D - Laboratoire génie civil, diagnostic et durabilité, Égletons</a>, et l'<a href="https://www.iut.unilim.fr/" class="inline-link" target="_blank" rel="noopener">IUT du Limousin - Département génie civil, Limoges</a>.</p>
     </div>
   </div>
 </section>
 
 <section class="cta reveal">
-  <span class="eyebrow" data-key="cta_eyebrow">What I'm looking for</span>
-  <h2 data-key="cta_h2">Research teams and workshops asking the same question - ethical forestry, and wood transformation that's relevant.</h2>
-  <p data-key="cta_p">Fifteen years running the full chain, forest to finished structure, with the software and robotics skills to take that further. Based in Limousin, close to a wild forest and a unique production site. Always glad to hear from people working on similar ground: research teams, technical exchange, guest teaching.</p>
+  <span class="eyebrow" data-key="cta_eyebrow">Ce que je recherche</span>
+  <h2 data-key="cta_h2">Des personnes qui se posent les mêmes questions - foresterie éthique et transformation du bois pertinente -<br>et qui veulent agir.</h2>
+  <p data-key="cta_p">Quinze ans à parcourir toute la chaîne, de la forêt à la structure finie, et maintenant les compétences logicielles et robotiques pour aller plus loin. Installé en Limousin, entre forêt sauvage et site de production atypique, je serais heureux d'échanger avec des personnes travaillant sur le même domaine : équipes de recherche, partenariats techniques, interventions pédagogiques.</p>
   <div class="cta-tags">
-    <span data-key="cta_tag1">Robotic fabrication</span>
-    <span data-key="cta_tag2">Timber engineering</span>
+    <span data-key="cta_tag1">Fabrication robotique</span>
+    <span data-key="cta_tag2">Ingénierie bois</span>
     <span>Grasshopper / KukaPRC</span>
-    <span data-key="cta_tag4">Forestry &amp; silviculture</span>
-    <span data-key="cta_tag5">Technical training</span>
+    <span data-key="cta_tag4">Foresterie &amp; sylviculture</span>
+    <span data-key="cta_tag5">Formation technique</span>
   </div>
 </section>
 
-<div class="lang-marker"><div class="lang-marker-grain"></div><span data-key="lang_marker">foresterie appliquée</span></div>
+<div class="lang-marker"><div class="lang-marker-grain"></div><span data-key="lang_marker"><span class="lm-white">Foresterie</span> <span class="lm-oak">Appliquée</span></span></div>
 
 <section class="local-section" id="exploitation-forestiere">
   <div class="local-inner">
@@ -881,7 +917,7 @@
 <section class="local-section alt" id="abattages-complexes">
   <div class="local-inner">
     <span class="eyebrow" data-key="local_eyebrow">Activité locale - Limousin</span>
-    <h2 data-key="elagage_h2">Elagage et abattage complexe</h2>
+    <h2 data-key="elagage_h2">Élagage et abattage complexe</h2>
     <p class="local-lede" data-key="elagage_lede">Arbres difficiles à proximité immédiate de bâtiments, réseaux ou zones à risque - interventions techniques maîtrisées.</p>
     <div class="local-grid">
       <div>
@@ -893,9 +929,9 @@
         </ul>
         <div class="callout">
           <b data-key="elag_callout_title">Confiance</b>
-          <span data-key="elag_callout_text">100% d'engagement, 0% d'accident, 10 ans de satisfaction clients.<br>
-          Contact direct : <a href="tel:+33768679555" class="inline-link">07 68 67 95 55</a></span>
+          <span data-key="elag_callout_text">100% d'engagement, 0% d'accident, 10 ans de satisfaction clients.<br>Contact direct : <a href="tel:+33768679555" class="inline-link">07 68 67 95 55</a></span>
         </div>
+        <a href="devis.html" class="devis-cta" data-key="elag_devis_btn">Demander un devis</a>
       </div>
       <div class="photo-slot has-image natural">
         <img src="assets/publication.jpg" alt="Nicolas Rohart s'éloignant en sous-bois, silhouette entre les fûts" loading="lazy">
@@ -906,15 +942,15 @@
 
 <footer>
   <div class="contact-inner">
-    <h2 data-key="footer_h2">Let's talk.</h2>
+    <h2 data-key="footer_h2">Discutons-en.</h2>
     <div class="contact-links">
       <span class="email-row">
         <a href="mailto:nicolas.rohart@free.fr">nicolas.rohart@free.fr</a>
-        <button type="button" class="copy-btn" data-key="footer_copy_btn" onclick="copyEmail(this)">Copy</button>
+        <button type="button" class="copy-btn" data-key="footer_copy_btn" onclick="copyEmail(this)">Copier</button>
       </span>
       <a href="tel:+33768679555">+33 7 68 67 95 55</a>
       <a href="https://www.linkedin.com/in/nicolas-rohart-timber" target="_blank" rel="noopener">linkedin.com/in/nicolas-rohart-timber</a>
-      <a href="assets/Nicolas-Rohart-Dossier.pdf" target="_blank" rel="noopener" data-key="footer_dossier">Download one-page dossier (PDF)</a>
+      <a href="assets/Nicolas-Rohart-Dossier.pdf" target="_blank" rel="noopener" data-key="footer_dossier">Télécharger le dossier une page (PDF)</a>
     </div>
   </div>
   <!-- APRÈS IMMATRICULATION DE LA SASU, REMPLACER LE BLOC "ÉDITEUR" PAR :
@@ -991,20 +1027,22 @@
 </style>
 
 <script>
-  var currentLang = 'en';
+  var currentLang = 'fr';
 
   var I18N = {
     en: {
       nav_construction: "Construction &amp; Robotics",
       nav_elagage: "Tree Pruning &amp; Complex Felling",
       nav_exploitation: "Forest Management",
+      nav_devis: "Request a quote",
+      elag_devis_btn: "Request a quote",
       la_copy_btn: "Copy",
       hero_h1: "From standing tree<br>to finished <em>structure</em>",
       hero_lede: "I operate across the entire timber value chain - forest management and harvesting, computational design, robotic shaping of curved timber, and on-site construction - including the digital workflows that connect each stage.",
       hero_exp: "EXPERIENCE<b>15 years, full chain</b>",
       hero_looking: "LOOKING FOR<b>R&D partnership</b>",
       hero_open: "OPEN TO<b>Worldwide</b>",
-      intro_p: "Learning forestry by living in the forest, and robotics alongside an expert, I can now generate cutting toolpaths for a KUKA robot directly from scanned tree geometry, enabling it to follow the unique form of each trunk. I follow projects all the way through, from standing trees I select to the finished structure.",
+      intro_p: "Trained in forestry at school, in the forest by living in it, and finally in robotics alongside an expert, I can now just as readily sow an enrichment tree nursery as generate machining toolpaths for a robot. Depending on what is needed, I can follow construction projects all the way through, from the trees I select in the forest to the finished structure.",
       chain_eyebrow: "The Chain",
       chain_h2: "Five stages, one hand throughout",
       chain_p: "Each stage below feeds the next - a tree felled in stage two becomes a robot toolpath in stage four, and a client's home in stage five stands in the same landscape assessed in stage one.",
@@ -1093,13 +1131,15 @@
       nav_construction: "Construction &amp; Robotique",
       nav_elagage: "Élagage &amp; abattage complexe",
       nav_exploitation: "Exploitation forestière",
+      nav_devis: "Demander un devis",
+      elag_devis_btn: "Demander un devis",
       la_copy_btn: "Copier",
       hero_h1: "De l'arbre debout<br>à la <em>structure finie</em>",
       hero_lede: "J'interviens sur toute la filière du bois - gestion forestière, exploitation, conception numérique, façonnage robotisé des bois bruts et construction sur site.",
       hero_exp: "EXPÉRIENCE<b>15 ans de filière</b>",
       hero_looking: "RECHERCHE<b>Partenariat R&D</b>",
       hero_open: "OUVERT À<b>Monde</b>",
-      intro_p: "Formé à la forêt en y habitant et à la robotique aux côtés d'un expert,<br>je peux désormais générer des trajectoires d'usinage pour un robot Kuka<br>à partir de géométries réelles de troncs. Je suis les projets de bout en bout, des arbres que je choisis en forêt jusqu'à la structure finie.",
+      intro_p: "Formé à l'exploitation à l'école, à la forêt en y habitant et enfin à la robotique aux côtés d'un expert, je peux désormais aussi bien semer une pépinière forestière d'enrichissement que générer des trajectoires d'usinage pour un robot. Au besoin, je suis les projets de construction de bout en bout, des arbres que je choisis en forêt jusqu'à la structure finie.",
       chain_eyebrow: "une filière",
       chain_h2: "Cinq étapes, une vision du début à la fin",
       chain_p: "Chaque étape ci-dessous nourrit la suivante - un arbre abattu à l'étape deux devient une trajectoire de robot à l'étape quatre, et la maison d'un client à l'étape cinq se dresse dans le paysage considéré à l'étape un.",
@@ -1215,10 +1255,12 @@
   (function(){
     var stored = null;
     try{ stored = localStorage.getItem('site-lang'); }catch(e){}
-    var initial = (stored === 'fr' || stored === 'en') ? stored : 'en';
-    document.addEventListener('DOMContentLoaded', function(){
+    var initial = (stored === 'fr' || stored === 'en') ? stored : 'fr';
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', function(){ applyLang(initial); });
+    } else {
       applyLang(initial);
-    });
+    }
   })();
 </script>
 
