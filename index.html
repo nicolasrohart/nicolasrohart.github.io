@@ -211,9 +211,9 @@
   .la-menu a:hover{background:linear-gradient(135deg, var(--oak-soft), var(--oak-soft)); border-color:var(--oak-soft); transform:translateY(-2px) scale(1.03); box-shadow:0 6px 16px rgba(169,120,74,0.6), 0 2px 6px rgba(33,29,23,0.3);}
   .production-link a.pill-btn{
     display:inline-block;
-    font-family:'IBM Plex Mono',monospace; font-size:0.72rem; font-weight:700; letter-spacing:0.06em;
+    font-family:'IBM Plex Mono',monospace; font-size:0.92rem; font-weight:700; letter-spacing:0.05em;
     text-transform:uppercase;
-    color:var(--paper); background:var(--oak); padding:9px 18px; border-radius:20px;
+    color:var(--paper); background:var(--oak); padding:0.74rem 1.5rem; border-radius:1.6rem;
     text-decoration:none; white-space:nowrap;
     text-shadow:0 1px 1px rgba(33,29,23,0.35), 0 -1px 0 rgba(255,255,255,0.12);
     box-shadow:0 2px 6px rgba(33,29,23,0.25);
@@ -626,6 +626,22 @@
   /* scroll reveal */
   .reveal{opacity:0; transform:translateY(18px); transition:opacity 0.7s ease, transform 0.7s ease;}
   .reveal.in{opacity:1; transform:none;}
+  /* --- corrections mobile du 04/09/2026 ---
+     Place en fin de feuille a dessein : ces regles doivent gagner sur celles
+     de meme specificite ecrites plus haut. --- */
+  @media (max-width:840px){
+    /* les deux paragraphes centres etaient enfermes dans 72vw moins 10vw de marge */
+    .intro{ max-width:none; padding:5vh 5vw 4vh; text-align:left; }
+    .intro p{ font-size:1.06rem; }
+    .cta{ max-width:none; }
+    .cta h2{ font-size:1.62rem; max-width:none; }
+    html[lang="fr"] .cta h2{ max-width:none; }
+    .cta h2 br{ display:none; }
+    /* la derniere image remontait de 190 px sur le texte : la regle mobile
+       ecrite plus haut etait ecrasee par celle du bureau, qui vient apres */
+    #abattages-complexes .photo-slot.natural{ width:100%; margin-top:26px; }
+  }
+
   @media (prefers-reduced-motion: reduce){ .reveal{opacity:1; transform:none; transition:none;} html{scroll-behavior:auto;} }
 </style>
 </head>
@@ -925,7 +941,6 @@
           <li data-key="elag_li1">Abattage en traction par un engin lourd</li>
           <li data-key="elag_li2">Démontage par pièces (nacelle)</li>
           <li data-key="elag_li3">Évacuation au choix</li>
-          <li data-key="elag_li4">Assurance spécifique et renforcée</li>
         </ul>
         <div class="callout">
           <b data-key="elag_callout_title">Confiance</b>
@@ -1113,7 +1128,6 @@
       elag_li1: "Directional felling using heavy machinery",
       elag_li2: "Sectional dismantling (aerial platform)",
       elag_li3: "Removal, your choice of method",
-      elag_li4: "Specific, enhanced insurance coverage",
       elag_callout_title: "Trust",
       elag_callout_text: '100% commitment, 0% accidents, 10 years of client satisfaction.<br>Direct contact: <a href="tel:+33768679555" class="inline-link">07 68 67 95 55</a>',
       footer_h2: "Let's talk.",
@@ -1210,7 +1224,6 @@
       elag_li1: "Abattage en traction par un engin lourd",
       elag_li2: "Démontage par pièces (nacelle)",
       elag_li3: "Évacuation au choix",
-      elag_li4: "Assurance spécifique et renforcée",
       elag_callout_title: "Confiance",
       elag_callout_text: '100% d\'engagement, 0% d\'accident, 10 ans de satisfaction clients.<br>Contact direct : <a href="tel:+33768679555" class="inline-link">07 68 67 95 55</a>',
       footer_h2: "Discutons-en.",
