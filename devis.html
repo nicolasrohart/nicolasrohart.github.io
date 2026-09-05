@@ -263,6 +263,7 @@
     .then(function(data){
       if (data.success){
         form.style.display = 'none';
+        show("C'est parti. Je vous recontacte très bientôt !", false);
       } else {
         btn.disabled = false; btn.textContent = 'Envoyer';
         show("L'envoi n'a pas abouti. Appelez le 07 68 67 95 55, c'est plus sûr.", true);
