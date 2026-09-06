@@ -334,7 +334,7 @@
 
   /* ---------- Section shells ---------- */
   section{padding:11vh 5vw; position:relative;}
-  .skills{padding-top:5vh; padding-bottom:5vh;}
+  .skills{padding-top:3vh; padding-bottom:3vh;}
   .research{padding-top:3vh; padding-bottom:3vh;}
   .research .section-label{padding:1vh 5vw 1vh;}
   .research .section-label .eyebrow{margin-bottom:7px;}
@@ -475,17 +475,17 @@
   /* ---------- Technical Profile ---------- */
   .skills{background:var(--paper);}
   .skills-grid{
-    max-width:min(88vw, 1750px); margin:4vh auto 0;
+    max-width:min(88vw, 1750px); margin:2.5vh auto 0;
     display:grid; grid-template-columns:repeat(3,1fr); gap:1px;
     background:var(--line);
     border:1px solid var(--line);
   }
-  .skills-col{background:var(--paper); padding:30px 26px; text-align:center;}
-  .skills-col .eyebrow{display:block; margin-bottom:16px;}
+  .skills-col{background:var(--paper); padding:20px 22px; text-align:center;}
+  .skills-col .eyebrow{display:block; margin-bottom:10px;}
   .skills-col ul{list-style:none;}
   .skills-col li{
     font-family:'Inter',sans-serif; font-size:0.94rem; color:var(--ink);
-    padding:8px 0; border-bottom:1px solid var(--line);
+    padding:6px 0; border-bottom:1px solid var(--line);
   }
   .skills-col li:last-child{border-bottom:none;}
   .skills-subhead{
@@ -597,17 +597,17 @@
 
   /* ---------- Footer legal block ---------- */
   .footer-legal{
-    max-width:min(88vw, 1750px); margin:7vh auto 0;
+    max-width:min(88vw, 1750px); margin:4vh auto 0;
     border-top:1px solid var(--line-dark);
-    padding-top:26px;
+    padding-top:18px;
     display:grid; grid-template-columns:repeat(3, minmax(0,1fr));
-    gap:26px 44px;
-    font-family:'IBM Plex Mono',monospace; font-size:0.66rem; line-height:1.75;
+    gap:12px 36px;
+    font-family:'IBM Plex Mono',monospace; font-size:0.63rem; line-height:1.55;
     color:rgba(246,243,236,0.5);
   }
   @media (max-width:840px){ .footer-legal{grid-template-columns:1fr; gap:22px;} }
   .fl-label{
-    display:block; margin-bottom:8px;
+    display:block; margin-bottom:5px;
     font-size:0.6rem; font-weight:700; letter-spacing:0.13em; text-transform:uppercase;
     color:var(--oak-soft);
   }
@@ -615,9 +615,9 @@
   .footer-legal a:hover{color:var(--oak-soft); border-color:var(--oak-soft);}
 
   .footer-titleblock{
-    max-width:min(88vw, 1750px); margin:26px auto 0;
+    max-width:min(88vw, 1750px); margin:16px auto 0;
     border-top:1px solid var(--line-dark);
-    padding-top:14px;
+    padding-top:10px;
     display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px 24px;
     font-family:'IBM Plex Mono',monospace; font-size:0.62rem; letter-spacing:0.06em;
     color:rgba(246,243,236,0.35);
@@ -673,7 +673,7 @@
   <div class="la-contact">
     <a href="tel:+33768679555">07 68 67 95 55</a>
     <span class="la-email-group">
-      <a href="mailto:nicolas.rohart@free.fr">nicolas.rohart@free.fr</a>
+      <a href="mailto:contact@nicolasrohart.com">contact@nicolasrohart.com</a>
       <button type="button" class="la-copy-btn" data-key="la_copy_btn" onclick="copyTopEmail(this)">Copier</button>
     </span>
   </div>
@@ -878,13 +878,13 @@
     </div>
     <div class="research-card">
       <span class="eyebrow" data-key="research_card2_eyebrow">Août 2026</span>
-      <h4>ROB|ARCH-adjacent workshop, Aarhus School of Architecture</h4>
-      <p data-key="research_card2_p">Présentation de nos travaux aux côtés du réseau de recherche CITA - Université d'Aarhus - SDU Odense, dédié à la fabrication robotisée de formes libres en bois.</p>
+      <h4>ROB|ARCH, Aarhus School of Architecture</h4>
+      <p data-key="research_card2_p">Travaux présentés au réseau de recherche CITA - Université d'Aarhus - SDU Odense, dédié à la fabrication robotisée de formes libres en bois.</p>
     </div>
     <div class="research-card">
       <span class="eyebrow" data-key="research_card3_eyebrow">Réseau</span>
       <h4 data-key="research_card3_h4">En collaboration avec IBOIS Lausanne, GC2D Égletons et l'IUT de Limoges</h4>
-      <p data-key="research_card3_p">En partenariat avec <a href="https://www.epfl.ch/labs/ibois/" class="inline-link" target="_blank" rel="noopener">IBOIS - Laboratoire de construction bois, EPFL Lausanne</a>, <a href="https://www.unilim.fr/recherche-gc/" class="inline-link" target="_blank" rel="noopener">GC2D - Laboratoire génie civil, diagnostic et durabilité, Égletons</a>, et l'<a href="https://www.iut.unilim.fr/" class="inline-link" target="_blank" rel="noopener">IUT du Limousin - Département génie civil, Limoges</a>.</p>
+      <p data-key="research_card3_p"><a href="https://www.epfl.ch/labs/ibois/" class="inline-link" target="_blank" rel="noopener">IBOIS - Laboratoire de construction bois, EPFL Lausanne</a>, <a href="https://www.unilim.fr/recherche-gc/" class="inline-link" target="_blank" rel="noopener">GC2D - Laboratoire génie civil, diagnostic et durabilité, Égletons</a>, et l'<a href="https://www.iut.unilim.fr/" class="inline-link" target="_blank" rel="noopener">IUT du Limousin - Département génie civil, Limoges</a>.</p>
     </div>
   </div>
 </section>
@@ -934,17 +934,18 @@
   <div class="local-inner">
     <span class="eyebrow" data-key="local_eyebrow">Activité locale - Limousin</span>
     <h2 data-key="elagage_h2">Élagage et abattage complexe</h2>
-    <p class="local-lede" data-key="elagage_lede">Arbres difficiles à proximité immédiate de bâtiments, réseaux ou zones à risque - interventions techniques maîtrisées.</p>
+    <p class="local-lede" data-key="elagage_lede">Bâtiments, réseaux, opérations spécifiques : maîtrise technique et expérience des chantiers complexes, pour l'arbre de votre jardin.</p>
     <div class="local-grid">
       <div>
         <ul class="local-list">
-          <li data-key="elag_li1">Abattage en traction par un engin lourd</li>
-          <li data-key="elag_li2">Démontage par pièces (nacelle)</li>
-          <li data-key="elag_li3">Évacuation au choix</li>
+          <li data-key="elag_li1">Abattage directionnel</li>
+          <li data-key="elag_li2">Traction par un engin lourd</li>
+          <li data-key="elag_li3">Démontage par pièces (nacelle)</li>
+          <li data-key="elag_li4">Évacuation au choix</li>
         </ul>
         <div class="callout">
           <b data-key="elag_callout_title">Confiance</b>
-          <span data-key="elag_callout_text">100% d'engagement, 0% d'accident, 10 ans de satisfaction clients.<br>Contact direct : <a href="tel:+33768679555" class="inline-link">07 68 67 95 55</a></span>
+          <span data-key="elag_callout_text">100% d'engagement, 0% d'accident, 10 ans d'élagage et d'abattage complexe.<br>Contact direct : <a href="tel:+33768679555" class="inline-link">07 68 67 95 55</a></span>
         </div>
         <a href="devis.html" class="devis-cta" data-key="elag_devis_btn">Demander un devis</a>
       </div>
@@ -960,7 +961,7 @@
     <h2 data-key="footer_h2">Discutons-en.</h2>
     <div class="contact-links">
       <span class="email-row">
-        <a href="mailto:nicolas.rohart@free.fr">nicolas.rohart@free.fr</a>
+        <a href="mailto:contact@nicolasrohart.com">contact@nicolasrohart.com</a>
         <button type="button" class="copy-btn" data-key="footer_copy_btn" onclick="copyEmail(this)">Copier</button>
       </span>
       <a href="tel:+33768679555">+33 7 68 67 95 55</a>
@@ -968,38 +969,21 @@
       <a href="assets/Nicolas-Rohart-Dossier.pdf" target="_blank" rel="noopener" data-key="footer_dossier">Télécharger le dossier une page (PDF)</a>
     </div>
   </div>
-  <!-- APRÈS IMMATRICULATION DE LA SASU, REMPLACER LE BLOC "ÉDITEUR" PAR :
-       LES ARBRES COMME ILS SONT, SASU au capital de 5 000 €, SIREN [xxx], RCS Limoges [xxx],
-       siège 8 avenue de la Paix, 87120 Eymoutiers. Directeur de la publication : Nicolas Rohart, président.
-       Ajouter : Assurance décennale : [assureur], contrat [n°], couverture France métropolitaine. -->
-  <div class="footer-legal">
+  <div class="footer-legal" id="mentions">
     <div>
       <span class="fl-label" data-key="fl_label_editeur">Éditeur du site</span>
-      Nicolas Rohart, entrepreneur individuel<br>
-      8, avenue de la Paix &ndash; 87120 Eymoutiers<br>
-      SIREN 528 893 597 &ndash; RCS Limoges<br>
-      <!-- Franchise en base de TVA : pas de n° intracommunautaire à afficher ici.
-           La mention « TVA non applicable, art. 293 B du CGI » reste obligatoire
-           sur les devis et factures. -->
+      Nicolas Rohart, entrepreneur individuel - 5, rue Monte à Château, 87120 Eymoutiers - SIREN 528 893 597, RCS Limoges<br>
       <span data-key="fl_dirpub">Directeur de la publication : Nicolas Rohart</span>
     </div>
     <div>
       <span class="fl-label" data-key="fl_label_hebergeur">Hébergeur</span>
-      Gandi SAS<br>
-      63-65 boulevard Masséna &ndash; 75013 Paris, France<br>
-      +33 1 70 37 76 61<br>
+      Gandi SAS - 63-65 boulevard Masséna, 75013 Paris, France - +33 1 70 37 76 61<br>
       <a href="https://www.gandi.net" target="_blank" rel="noopener">gandi.net</a>
     </div>
-    <!-- MÉDIATION DE LA CONSOMMATION - À AJOUTER DÈS LA CRÉATION DE LA SASU.
-         Obligatoire (art. L616-1 c. conso) dès lors qu'on facture des particuliers :
-         élagage, abattage, construction. Adhésion payante à un médiateur agréé (50-100 €/an),
-         puis rétablir ici une colonne avec nom, adresse postale et site du médiateur.
-         Volontairement omis pour l'EI, qui cesse dans quelques semaines.
-         Ne PAS ajouter de lien vers la plateforme européenne RLL : fermée le 20 juillet 2025. -->
     <div>
       <span class="fl-label" data-key="fl_label_credits">Crédits &amp; données</span>
       <span data-key="photo_credit">Photographies : Hugo Mairelles et Ludovic Mallegol</span><br>
-      <span data-key="fl_privacy">Aucun cookie, aucun traceur, aucun formulaire, aucune ressource tierce. Aucune donnée personnelle n’est collectée.</span>
+      <span data-key="fl_privacy">Aucun cookie, aucun traceur, aucune ressource tierce. Seule la langue choisie reste dans votre navigateur. Le formulaire de devis transmet vos informations via Web3Forms, qui me les envoie par courriel ; rien n'est conservé sur ce site.</span>
     </div>
   </div>
   <div class="footer-titleblock">
@@ -1017,7 +1001,7 @@
   revealEls.forEach(el=>io.observe(el));
 
   function copyEmail(btn){
-    const email = 'nicolas.rohart@free.fr';
+    const email = 'contact@nicolasrohart.com';
     navigator.clipboard.writeText(email).then(()=>{
       const original = btn.textContent;
       btn.textContent = (typeof currentLang !== 'undefined' && currentLang === 'fr') ? 'Copié !' : 'Copied!';
@@ -1101,10 +1085,10 @@
       research_p: "This is a small, fast-moving international research area. Here's where we fit in it.",
       research_card1_p: "Peer-reviewed article, <i>Construction Robotics</i> (Springer), on scan-to-trajectory robotic shaping of natural curved timber.",
       research_card2_eyebrow: "Aug 2026",
-      research_card2_p: "Presenting our workflow alongside the CITA - Aarhus University - SDU Odense research network working on robotic free-form timber fabrication.",
+      research_card2_p: "Our work was presented to the CITA - Aarhus University - SDU Odense research network, dedicated to robotic free-form timber fabrication.",
       research_card3_eyebrow: "Network",
       research_card3_h4: "In collaboration with IBOIS Lausanne, GC2D Egletons and IUT Limoges",
-      research_card3_p: 'Working with <a href="https://www.epfl.ch/labs/ibois/" class="inline-link" target="_blank" rel="noopener">IBOIS - Timber Construction Laboratory, EPFL Lausanne</a>, <a href="https://www.unilim.fr/recherche-gc/" class="inline-link" target="_blank" rel="noopener">GC2D - Civil Engineering, Diagnosis and Durability Laboratory, Egletons</a>, and the <a href="https://www.iut.unilim.fr/" class="inline-link" target="_blank" rel="noopener">IUT du Limousin - Civil Engineering Department, Limoges</a>.',
+      research_card3_p: '<a href="https://www.epfl.ch/labs/ibois/" class="inline-link" target="_blank" rel="noopener">IBOIS - Timber Construction Laboratory, EPFL Lausanne</a>, <a href="https://www.unilim.fr/recherche-gc/" class="inline-link" target="_blank" rel="noopener">GC2D - Civil Engineering, Diagnosis and Durability Laboratory, Egletons</a>, and the <a href="https://www.iut.unilim.fr/" class="inline-link" target="_blank" rel="noopener">IUT du Limousin - Civil Engineering Department, Limoges</a>.',
       cta_eyebrow: "What I'm looking for",
       cta_h2: "Research teams and workshops asking the same question - ethical forestry, and wood transformation that's relevant.",
       cta_p: "Fifteen years running the full chain, forest to finished structure, with the software and robotics skills to take that further. Based in Limousin, close to a wild forest and a unique production site. Always glad to hear from people working on similar ground: research teams, technical exchange, guest teaching.",
@@ -1124,12 +1108,13 @@
       expl_callout_title: "Hiring",
       expl_callout_text: "I'm currently looking to hire a qualified carpenter to join the team. Get in touch directly using the contact details at the bottom of the page.",
       elagage_h2: "Tree Pruning &amp; Complex Felling",
-      elagage_lede: "Difficult trees close to buildings, utility lines, or hazard zones - technically controlled interventions.",
-      elag_li1: "Directional felling using heavy machinery",
-      elag_li2: "Sectional dismantling (aerial platform)",
-      elag_li3: "Removal, your choice of method",
+      elagage_lede: "Buildings, utility lines, specific operations: technical command and the experience of complex sites, for the tree in your garden.",
+      elag_li1: "Directional felling",
+      elag_li2: "Traction with heavy machinery",
+      elag_li3: "Sectional dismantling (aerial platform)",
+      elag_li4: "Removal, your choice of method",
       elag_callout_title: "Trust",
-      elag_callout_text: '100% commitment, 0% accidents, 10 years of client satisfaction.<br>Direct contact: <a href="tel:+33768679555" class="inline-link">07 68 67 95 55</a>',
+      elag_callout_text: '100% commitment, 0% accidents, 10 years of tree pruning and complex felling.<br>Direct contact: <a href="tel:+33768679555" class="inline-link">07 68 67 95 55</a>',
       footer_h2: "Let's talk.",
       footer_copy_btn: "Copy",
       footer_dossier: "Download one-page dossier (PDF)",
@@ -1138,7 +1123,7 @@
       fl_dirpub: "Publication director: Nicolas Rohart",
       fl_label_hebergeur: "Hosting",
       fl_label_credits: "Credits &amp; data",
-      fl_privacy: "No cookies, no trackers, no forms, no third-party resources. No personal data is collected.",
+      fl_privacy: "No cookies, no trackers, no third-party resources. Only your language choice stays in your browser. The quote form sends your details through Web3Forms, which forwards them to me by email; nothing is stored on this site.",
       fl_rights: "ALL RIGHTS RESERVED"
     },
     fr: {
@@ -1197,10 +1182,10 @@
       research_p: "Un champ de recherche international restreint, et en plein essor.",
       research_card1_p: "Article évalué par des pairs, <i>Construction Robotics</i> (Springer), sur le façonnage robotisé des bois courbes, trajectoires produites à partir de scan 3D.",
       research_card2_eyebrow: "Août 2026",
-      research_card2_p: "Présentation de nos travaux aux côtés du réseau de recherche CITA - Université d'Aarhus - SDU Odense, dédié à la fabrication robotisée de formes libres en bois.",
+      research_card2_p: "Travaux présentés au réseau de recherche CITA - Université d'Aarhus - SDU Odense, dédié à la fabrication robotisée de formes libres en bois.",
       research_card3_eyebrow: "Réseau",
       research_card3_h4: "En collaboration avec IBOIS Lausanne, GC2D Égletons et l'IUT de Limoges",
-      research_card3_p: 'En partenariat avec <a href="https://www.epfl.ch/labs/ibois/" class="inline-link" target="_blank" rel="noopener">IBOIS - Laboratoire de construction bois, EPFL Lausanne</a>, <a href="https://www.unilim.fr/recherche-gc/" class="inline-link" target="_blank" rel="noopener">GC2D - Laboratoire génie civil, diagnostic et durabilité, Égletons</a>, et l\'<a href="https://www.iut.unilim.fr/" class="inline-link" target="_blank" rel="noopener">IUT du Limousin - Département génie civil, Limoges</a>.',
+      research_card3_p: '<a href="https://www.epfl.ch/labs/ibois/" class="inline-link" target="_blank" rel="noopener">IBOIS - Laboratoire de construction bois, EPFL Lausanne</a>, <a href="https://www.unilim.fr/recherche-gc/" class="inline-link" target="_blank" rel="noopener">GC2D - Laboratoire génie civil, diagnostic et durabilité, Égletons</a>, et l\'<a href="https://www.iut.unilim.fr/" class="inline-link" target="_blank" rel="noopener">IUT du Limousin - Département génie civil, Limoges</a>.',
       cta_eyebrow: "Ce que je recherche",
       cta_h2: "Des personnes qui se posent les mêmes questions - foresterie éthique et transformation du bois pertinente -<br>et qui veulent agir.",
       cta_p: "Quinze ans à parcourir toute la chaîne, de la forêt à la structure finie, et maintenant les compétences logicielles et robotiques pour aller plus loin. Installé en Limousin, entre forêt sauvage et site de production atypique, je serais heureux d'échanger avec des personnes travaillant sur le même domaine : équipes de recherche, partenariats techniques, interventions pédagogiques.",
@@ -1220,12 +1205,13 @@
       expl_callout_title: "Recrutement",
       expl_callout_text: "Je recherche actuellement un charpentier qualifié à embaucher pour rejoindre l'activité. Contactez-moi directement via les coordonnées en bas de page.",
       elagage_h2: "Élagage et abattage complexe",
-      elagage_lede: "Arbres difficiles à proximité immédiate de bâtiments, réseaux ou zones à risque - interventions techniques maîtrisées.",
-      elag_li1: "Abattage en traction par un engin lourd",
-      elag_li2: "Démontage par pièces (nacelle)",
-      elag_li3: "Évacuation au choix",
+      elagage_lede: "Bâtiments, réseaux, opérations spécifiques : maîtrise technique et expérience des chantiers complexes, pour l'arbre de votre jardin.",
+      elag_li1: "Abattage directionnel",
+      elag_li2: "Traction par un engin lourd",
+      elag_li3: "Démontage par pièces (nacelle)",
+      elag_li4: "Évacuation au choix",
       elag_callout_title: "Confiance",
-      elag_callout_text: '100% d\'engagement, 0% d\'accident, 10 ans de satisfaction clients.<br>Contact direct : <a href="tel:+33768679555" class="inline-link">07 68 67 95 55</a>',
+      elag_callout_text: '100% d\'engagement, 0% d\'accident, 10 ans d\'élagage et d\'abattage complexe.<br>Contact direct : <a href="tel:+33768679555" class="inline-link">07 68 67 95 55</a>',
       footer_h2: "Discutons-en.",
       footer_copy_btn: "Copier",
       footer_dossier: "Télécharger le dossier une page (PDF)",
@@ -1234,7 +1220,7 @@
       fl_dirpub: "Directeur de la publication : Nicolas Rohart",
       fl_label_hebergeur: "Hébergeur",
       fl_label_credits: "Crédits &amp; données",
-      fl_privacy: "Aucun cookie, aucun traceur, aucun formulaire, aucune ressource tierce. Aucune donnée personnelle n’est collectée.",
+      fl_privacy: "Aucun cookie, aucun traceur, aucune ressource tierce. Seule la langue choisie reste dans votre navigateur. Le formulaire de devis transmet vos informations via Web3Forms, qui me les envoie par courriel ; rien n'est conservé sur ce site.",
       fl_rights: "TOUS DROITS RÉSERVÉS"
     }
   };
@@ -1258,7 +1244,7 @@
   }
 
   function copyTopEmail(btn){
-    navigator.clipboard.writeText('nicolas.rohart@free.fr').then(function(){
+    navigator.clipboard.writeText('contact@nicolasrohart.com').then(function(){
       var original = btn.textContent;
       btn.textContent = (currentLang === 'fr') ? 'Copié ✓' : 'Copied ✓';
       setTimeout(function(){ btn.textContent = original; }, 1500);
