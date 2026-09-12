@@ -553,7 +553,7 @@
   .lang-marker .lm-white{color:var(--paper);}
   .lang-marker .lm-oak{color:var(--oak-soft);}
   @media (max-width:640px){ .lang-marker span{font-size:1.6rem;} }
-  .local-section{ padding:7vh 5vw; background:var(--paper);}
+  .local-section{ padding:7vh 5vw; background:var(--paper); scroll-margin-top:40px;}
   .local-section.alt{ background:var(--paper-dim); }
   .local-inner{max-width:min(88vw, 1750px); margin:0 auto;}
   .local-section h2{font-size:1.9rem; margin-top:10px;}
@@ -879,7 +879,7 @@
     <div class="research-card">
       <span class="eyebrow" data-key="research_card2_eyebrow">Août 2026</span>
       <h4>ROB|ARCH, Aarhus School of Architecture</h4>
-      <p data-key="research_card2_p">Travaux présentés au réseau de recherche CITA - Université d'Aarhus - SDU Odense, dédié à la fabrication robotisée de formes libres en bois.</p>
+      <p data-key="research_card2_p">Travaux présentés au réseau de recherche CITA Copenhague - Université d'Aarhus - SDU Odense, dédié à la fabrication robotisée de formes libres en bois.</p>
     </div>
     <div class="research-card">
       <span class="eyebrow" data-key="research_card3_eyebrow">Réseau</span>
@@ -920,7 +920,7 @@
         </ul>
         <div class="callout">
           <b data-key="expl_callout_title">Recrutement</b>
-          <span data-key="expl_callout_text">Je recherche actuellement un charpentier qualifié à embaucher pour rejoindre l'activité. Contactez-moi directement via les coordonnées en bas de page.</span>
+          <span data-key="expl_callout_text">Vous êtes charpentier qualifié ? Rejoignez mon équipe ! Contactez-moi directement via les coordonnées en bas de page.</span>
         </div>
       </div>
       <div class="photo-slot has-image">
@@ -1008,6 +1008,32 @@
       setTimeout(()=>{ btn.textContent = original; }, 1800);
     });
   }
+
+  /* --- correctif du 10/09/2026 : ancres internes (#abattages-complexes, etc.) ---
+     Avant chargement complet des polices, le texte s'affiche dans une police de
+     repli puis bascule vers Piazzolla/Inter/IBM Plex Mono (font-display:swap).
+     Ce changement redimensionne le texte sur toute la page et peut décaler
+     une section de plus de 1000px pendant l'animation de défilement lancée par
+     un clic sur un lien d'ancre - on atterrit alors sur la section précédente
+     au lieu de la bonne. On attend que les polices soient prêtes avant de
+     lancer le défilement, pour cibler une position déjà stable. --- */
+  document.querySelectorAll('a[href^="#"]').forEach(function(link){
+    link.addEventListener('click', function(e){
+      var id = link.getAttribute('href').slice(1);
+      var target = document.getElementById(id);
+      if(!target) return;
+      e.preventDefault();
+      function go(){
+        target.scrollIntoView({behavior:'smooth', block:'start'});
+        if (history.pushState) history.pushState(null, '', '#' + id);
+      }
+      if (document.fonts && document.fonts.ready) {
+        document.fonts.ready.then(go);
+      } else {
+        go();
+      }
+    });
+  });
 </script>
 
 <style>
@@ -1085,7 +1111,7 @@
       research_p: "This is a small, fast-moving international research area. Here's where we fit in it.",
       research_card1_p: "Peer-reviewed article, <i>Construction Robotics</i> (Springer), on scan-to-trajectory robotic shaping of natural curved timber.",
       research_card2_eyebrow: "Aug 2026",
-      research_card2_p: "Our work was presented to the CITA - Aarhus University - SDU Odense research network, dedicated to robotic free-form timber fabrication.",
+      research_card2_p: "Our work was presented to the CITA Copenhagen - Aarhus University - SDU Odense research network, dedicated to robotic free-form timber fabrication.",
       research_card3_eyebrow: "Network",
       research_card3_h4: "In collaboration with IBOIS Lausanne, GC2D Egletons and IUT Limoges",
       research_card3_p: '<a href="https://www.epfl.ch/labs/ibois/" class="inline-link" target="_blank" rel="noopener">IBOIS - Timber Construction Laboratory, EPFL Lausanne</a>, <a href="https://www.unilim.fr/recherche-gc/" class="inline-link" target="_blank" rel="noopener">GC2D - Civil Engineering, Diagnosis and Durability Laboratory, Egletons</a>, and the <a href="https://www.iut.unilim.fr/" class="inline-link" target="_blank" rel="noopener">IUT du Limousin - Civil Engineering Department, Limoges</a>.',
@@ -1106,7 +1132,7 @@
       expl_li4: "Partnerships with committed local associations",
       expl_li5: "Dedicated enrichment nursery",
       expl_callout_title: "Hiring",
-      expl_callout_text: "I'm currently looking to hire a qualified carpenter to join the team. Get in touch directly using the contact details at the bottom of the page.",
+      expl_callout_text: "Are you a qualified carpenter? Join my team! Get in touch directly using the contact details at the bottom of the page.",
       elagage_h2: "Tree Pruning &amp; Complex Felling",
       elagage_lede: "Buildings, utility lines, specific operations: technical command and the experience of complex sites, for the tree in your garden.",
       elag_li1: "Directional felling",
@@ -1182,7 +1208,7 @@
       research_p: "Un champ de recherche international restreint, et en plein essor.",
       research_card1_p: "Article évalué par des pairs, <i>Construction Robotics</i> (Springer), sur le façonnage robotisé des bois courbes, trajectoires produites à partir de scan 3D.",
       research_card2_eyebrow: "Août 2026",
-      research_card2_p: "Travaux présentés au réseau de recherche CITA - Université d'Aarhus - SDU Odense, dédié à la fabrication robotisée de formes libres en bois.",
+      research_card2_p: "Travaux présentés au réseau de recherche CITA Copenhague - Université d'Aarhus - SDU Odense, dédié à la fabrication robotisée de formes libres en bois.",
       research_card3_eyebrow: "Réseau",
       research_card3_h4: "En collaboration avec IBOIS Lausanne, GC2D Égletons et l'IUT de Limoges",
       research_card3_p: '<a href="https://www.epfl.ch/labs/ibois/" class="inline-link" target="_blank" rel="noopener">IBOIS - Laboratoire de construction bois, EPFL Lausanne</a>, <a href="https://www.unilim.fr/recherche-gc/" class="inline-link" target="_blank" rel="noopener">GC2D - Laboratoire génie civil, diagnostic et durabilité, Égletons</a>, et l\'<a href="https://www.iut.unilim.fr/" class="inline-link" target="_blank" rel="noopener">IUT du Limousin - Département génie civil, Limoges</a>.',
@@ -1203,7 +1229,7 @@
       expl_li4: "Partenariat avec les associations locales engagées",
       expl_li5: "Pépinière d'enrichissement dédiée",
       expl_callout_title: "Recrutement",
-      expl_callout_text: "Je recherche actuellement un charpentier qualifié à embaucher pour rejoindre l'activité. Contactez-moi directement via les coordonnées en bas de page.",
+      expl_callout_text: "Vous êtes charpentier qualifié ? Rejoignez mon équipe ! Contactez-moi directement via les coordonnées en bas de page.",
       elagage_h2: "Élagage et abattage complexe",
       elagage_lede: "Bâtiments, réseaux, opérations spécifiques : maîtrise technique et expérience des chantiers complexes, pour l'arbre de votre jardin.",
       elag_li1: "Abattage directionnel",

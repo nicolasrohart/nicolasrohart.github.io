@@ -66,14 +66,28 @@
   a{color:inherit;}
 
   .topbar{
-    display:flex; justify-content:flex-start; align-items:center;
+    display:flex; justify-content:space-between; align-items:center;
     padding:0.5rem 5vw;
     font-family:'IBM Plex Mono',monospace; font-size:0.7rem; letter-spacing:0.06em;
     text-transform:uppercase; color:var(--steel);
     border-bottom:1px solid var(--line);
   }
-  .topbar a{text-decoration:none;}
+  .topbar a{text-decoration:none; display:inline-flex; align-items:center; gap:0.35em;}
   .topbar a:hover{color:var(--oak);}
+  .topbar a .back-arrow{font-size:1.9em; line-height:1;}
+
+  /* ---------- Language switcher ---------- */
+  .lang-switch{display:flex; gap:4px;}
+  .lang-btn{
+    font-family:'IBM Plex Mono',monospace; font-size:0.69rem; font-weight:700; letter-spacing:0.02em;
+    color:var(--steel); background:transparent; border:1px solid var(--line);
+    border-radius:0.9rem; padding:0.13rem 0.5rem 0.13rem 0.38rem; cursor:pointer;
+    transition:background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+    display:inline-flex; align-items:center; gap:5px; line-height:1;
+  }
+  .lang-btn svg{display:block; border-radius:2px; flex-shrink:0;}
+  .lang-btn:hover{border-color:var(--oak);}
+  .lang-btn.active{background:var(--oak); border-color:var(--oak); color:var(--paper);}
 
   main{
     flex:1; width:100%; max-width:58rem; margin:0 auto;
@@ -191,15 +205,25 @@
 <body>
 
 <div class="topbar">
-  <a href="index.html">&larr; Nicolas Rohart</a>
+  <a href="index.html"><span class="back-arrow">&larr;</span> Nicolas Rohart</a>
+  <div class="lang-switch" role="group" aria-label="Language switcher">
+    <button type="button" class="lang-btn" data-lang="fr" onclick="setLang('fr')">
+      <svg width="2.1em" height="1.35em" viewBox="0 0 3 2" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="1" height="2" x="0" fill="#0055A4"/><rect width="1" height="2" x="1" fill="#FFFFFF"/><rect width="1" height="2" x="2" fill="#EF4135"/></svg>
+      FR
+    </button>
+    <button type="button" class="lang-btn" data-lang="en" onclick="setLang('en')">
+      <svg width="2.1em" height="1.35em" viewBox="0 0 60 30" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="60" height="30" fill="#00247d"/><path d="M0,0 60,30M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30M60,0 0,30" stroke="#cf142b" stroke-width="2"/><path d="M30,0V30M0,15H60" stroke="#fff" stroke-width="10"/><path d="M30,0V30M0,15H60" stroke="#cf142b" stroke-width="6"/></svg>
+      EN
+    </button>
+  </div>
 </div>
 
 <main>
   <div class="col-head">
-    <span class="eyebrow">Élagage &middot; Abattage</span>
-    <h1>Demander un devis</h1>
+    <span class="eyebrow" data-key="eyebrow">Élagage &middot; Abattage</span>
+    <h1 data-key="h1">Demander un devis</h1>
     <a class="tel" href="tel:+33768679555">07 68 67 95 55</a>
-    <p class="lede">Je me déplace dans un rayon de <strong>45 minutes autour d'Eymoutiers</strong>,
+    <p class="lede" data-key="lede">Je me déplace dans un rayon de <strong>45 minutes autour d'Eymoutiers (87)</strong>,
     j'évalue la situation sur place, et le devis suit.</p>
   </div>
 
@@ -211,46 +235,46 @@
     <label class="hp"><input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off"></label>
 
     <label>
-      <span class="lab">Nom</span>
+      <span class="lab" data-key="lab_nom">Nom</span>
       <input type="text" name="nom" required autocomplete="name">
     </label>
 
     <label>
-      <span class="lab">Adresse</span>
+      <span class="lab" data-key="lab_adresse">Adresse</span>
       <input type="text" name="adresse" required autocomplete="street-address">
     </label>
 
     <label>
-      <span class="lab">Téléphone</span>
+      <span class="lab" data-key="lab_telephone">Téléphone</span>
       <input type="tel" name="telephone" required autocomplete="tel" inputmode="tel">
     </label>
 
     <label>
-      <span class="lab">Ce qu'il y a à faire</span>
-      <textarea name="demande" rows="4" required placeholder="Quelques mots suffisent."></textarea>
+      <span class="lab" data-key="lab_demande">Ce qu'il y a à faire</span>
+      <textarea name="demande" rows="4" required placeholder="Quelques mots suffisent." data-key-ph="placeholder_demande"></textarea>
     </label>
 
-    <button type="submit">Envoyer</button>
+    <button type="submit" data-key="btn_send">Envoyer</button>
   </form>
 
   <div class="msg" id="msg" role="status" aria-live="polite"></div>
 
-  <p class="note">Vos coordonnées ne servent qu'à vous répondre. Elles ne sont ni revendues,
+  <p class="note" data-key="note">Vos coordonnées ne servent qu'à vous répondre. Elles ne sont ni revendues,
   ni utilisées pour autre chose.</p>
 
   <details class="rgpd">
-    <summary>Ce que deviennent les informations que vous envoyez</summary>
-    <p><strong>Qui les reçoit.</strong> Nicolas Rohart, entrepreneur individuel, 5 rue Monte à Château,
+    <summary data-key="rgpd_summary">Ce que deviennent les informations que vous envoyez</summary>
+    <p data-key="rgpd_p1"><strong>Qui les reçoit.</strong> Nicolas Rohart, entrepreneur individuel, 5 rue Monte à Château,
     87120 Eymoutiers, SIREN 528 893 597. Contact : <a href="mailto:contact@nicolasrohart.com">contact@nicolasrohart.com</a>.</p>
-    <p><strong>Pourquoi.</strong> Uniquement pour répondre à votre demande et, si elle aboutit, préparer un devis.
+    <p data-key="rgpd_p2"><strong>Pourquoi.</strong> Uniquement pour répondre à votre demande et, si elle aboutit, préparer un devis.
     C'est le seul usage. Base légale : les démarches précontractuelles que vous demandez (article 6.1.b du RGPD).</p>
-    <p><strong>Par où elles passent.</strong> Le formulaire les transmet par le service Web3Forms, qui me les
+    <p data-key="rgpd_p3"><strong>Par où elles passent.</strong> Le formulaire les transmet par le service Web3Forms, qui me les
     envoie ensuite par courriel ; rien n'est enregistré sur ce site. Web3Forms héberge ses serveurs aux
     États-Unis et encadre ce transfert par des clauses contractuelles types, le mécanisme prévu par le RGPD
     pour les transferts de données hors Union européenne.</p>
-    <p><strong>Combien de temps.</strong> Le temps de traiter la demande, puis trois ans à compter de notre
+    <p data-key="rgpd_p4"><strong>Combien de temps.</strong> Le temps de traiter la demande, puis trois ans à compter de notre
     dernier échange. Ensuite elles sont supprimées.</p>
-    <p><strong>Vos droits.</strong> Vous pouvez demander à voir vos informations, à les corriger, à les faire
+    <p data-key="rgpd_p5"><strong>Vos droits.</strong> Vous pouvez demander à voir vos informations, à les corriger, à les faire
     supprimer, à en limiter l'usage ou à vous opposer à leur utilisation : écrivez à
     <a href="mailto:contact@nicolasrohart.com">contact@nicolasrohart.com</a>. Si la réponse ne vous convient pas,
     vous pouvez saisir la CNIL (<a href="https://www.cnil.fr" target="_blank" rel="noopener">cnil.fr</a>).</p>
@@ -263,7 +287,93 @@
   </div>
 </main>
 
-<footer>Nicolas Rohart EI &middot; SIREN 528 893 597 &middot; Eymoutiers, Haute-Vienne &middot; <a href="index.html#mentions">Mentions légales</a></footer>
+<footer><span data-key="footer">Nicolas Rohart EI &middot; SIREN 528 893 597 &middot; Eymoutiers, Haute-Vienne &middot; </span><a href="index.html#mentions" data-key="footer_link">Mentions légales</a></footer>
+
+<script>
+  var currentLang = 'fr';
+
+  var I18N = {
+    fr: {
+      eyebrow: "Élagage &middot; Abattage",
+      h1: "Demander un devis",
+      lede: 'Je me déplace dans un rayon de <strong>45 minutes autour d\'Eymoutiers (87)</strong>, j\'évalue la situation sur place, et le devis suit.',
+      lab_nom: "Nom",
+      lab_adresse: "Adresse",
+      lab_telephone: "Téléphone",
+      lab_demande: "Ce qu'il y a à faire",
+      placeholder_demande: "Quelques mots suffisent.",
+      btn_send: "Envoyer",
+      btn_sending: "Envoi...",
+      msg_success: "C'est parti. Je vous recontacte très bientôt !",
+      msg_error: "L'envoi n'a pas abouti. Appelez le 07 68 67 95 55, c'est plus sûr.",
+      note: "Vos coordonnées ne servent qu'à vous répondre. Elles ne sont ni revendues, ni utilisées pour autre chose.",
+      rgpd_summary: "Ce que deviennent les informations que vous envoyez",
+      rgpd_p1: '<strong>Qui les reçoit.</strong> Nicolas Rohart, entrepreneur individuel, 5 rue Monte à Château, 87120 Eymoutiers, SIREN 528 893 597. Contact : <a href="mailto:contact@nicolasrohart.com">contact@nicolasrohart.com</a>.',
+      rgpd_p2: "<strong>Pourquoi.</strong> Uniquement pour répondre à votre demande et, si elle aboutit, préparer un devis. C'est le seul usage. Base légale : les démarches précontractuelles que vous demandez (article 6.1.b du RGPD).",
+      rgpd_p3: "<strong>Par où elles passent.</strong> Le formulaire les transmet par le service Web3Forms, qui me les envoie ensuite par courriel ; rien n'est enregistré sur ce site. Web3Forms héberge ses serveurs aux États-Unis et encadre ce transfert par des clauses contractuelles types, le mécanisme prévu par le RGPD pour les transferts de données hors Union européenne.",
+      rgpd_p4: "<strong>Combien de temps.</strong> Le temps de traiter la demande, puis trois ans à compter de notre dernier échange. Ensuite elles sont supprimées.",
+      rgpd_p5: '<strong>Vos droits.</strong> Vous pouvez demander à voir vos informations, à les corriger, à les faire supprimer, à en limiter l\'usage ou à vous opposer à leur utilisation : écrivez à <a href="mailto:contact@nicolasrohart.com">contact@nicolasrohart.com</a>. Si la réponse ne vous convient pas, vous pouvez saisir la CNIL (<a href="https://www.cnil.fr" target="_blank" rel="noopener">cnil.fr</a>).',
+      footer: "Nicolas Rohart EI &middot; SIREN 528 893 597 &middot; Eymoutiers, Haute-Vienne &middot; ",
+      footer_link: "Mentions légales"
+    },
+    en: {
+      eyebrow: "Tree Pruning &middot; Felling",
+      h1: "Request a quote",
+      lede: 'I travel within a <strong>45-minute radius of Eymoutiers (87)</strong>, assess the situation on site, and the quote follows.',
+      lab_nom: "Name",
+      lab_adresse: "Address",
+      lab_telephone: "Phone",
+      lab_demande: "What needs doing",
+      placeholder_demande: "A few words are enough.",
+      btn_send: "Send",
+      btn_sending: "Sending...",
+      msg_success: "All set. I'll get back to you very soon!",
+      msg_error: "The message didn't go through. Call 07 68 67 95 55, it's more reliable.",
+      note: "Your details are only used to reply to you. They are never resold or used for anything else.",
+      rgpd_summary: "What happens to the information you send",
+      rgpd_p1: '<strong>Who receives it.</strong> Nicolas Rohart, sole trader (entrepreneur individuel), 5 rue Monte à Château, 87120 Eymoutiers, SIREN 528 893 597. Contact: <a href="mailto:contact@nicolasrohart.com">contact@nicolasrohart.com</a>.',
+      rgpd_p2: "<strong>Why.</strong> Only to reply to your request and, if it goes ahead, to prepare a quote. That's the only use. Legal basis: the pre-contractual steps you're requesting (Article 6.1.b GDPR).",
+      rgpd_p3: "<strong>Where it goes.</strong> The form sends it through the Web3Forms service, which then emails it to me; nothing is stored on this site. Web3Forms hosts its servers in the United States and covers this transfer with standard contractual clauses, the mechanism the GDPR provides for transfers of data outside the European Union.",
+      rgpd_p4: "<strong>How long.</strong> For as long as it takes to handle the request, then three years from our last exchange. It is deleted after that.",
+      rgpd_p5: '<strong>Your rights.</strong> You can ask to see your information, correct it, have it deleted, limit its use, or object to its use: write to <a href="mailto:contact@nicolasrohart.com">contact@nicolasrohart.com</a>. If the reply doesn\'t satisfy you, you can refer the matter to the CNIL (<a href="https://www.cnil.fr" target="_blank" rel="noopener">cnil.fr</a>).',
+      footer: "Nicolas Rohart, sole trader &middot; SIREN 528 893 597 &middot; Eymoutiers, Haute-Vienne &middot; ",
+      footer_link: "Legal notice"
+    }
+  };
+
+  function applyLang(lang){
+    currentLang = lang;
+    document.documentElement.lang = lang;
+    var dict = I18N[lang];
+    document.querySelectorAll('[data-key]').forEach(function(el){
+      var key = el.getAttribute('data-key');
+      if (dict[key] !== undefined) el.innerHTML = dict[key];
+    });
+    document.querySelectorAll('[data-key-ph]').forEach(function(el){
+      var key = el.getAttribute('data-key-ph');
+      if (dict[key] !== undefined) el.placeholder = dict[key];
+    });
+    document.querySelectorAll('.lang-btn').forEach(function(btn){
+      btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+    });
+  }
+
+  function setLang(lang){
+    applyLang(lang);
+    try{ localStorage.setItem('site-lang', lang); }catch(e){}
+  }
+
+  (function(){
+    var stored = null;
+    try{ stored = localStorage.getItem('site-lang'); }catch(e){}
+    var initial = (stored === 'fr' || stored === 'en') ? stored : 'fr';
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', function(){ applyLang(initial); });
+    } else {
+      applyLang(initial);
+    }
+  })();
+</script>
 
 <script>
 (function(){
@@ -278,8 +388,9 @@
 
   form.addEventListener('submit', function(e){
     e.preventDefault();
+    var dict = I18N[currentLang];
     btn.disabled = true;
-    btn.textContent = 'Envoi...';
+    btn.textContent = dict.btn_sending;
 
     fetch('https://api.web3forms.com/submit', {
       method: 'POST',
@@ -290,15 +401,15 @@
     .then(function(data){
       if (data.success){
         form.style.display = 'none';
-        show("C'est parti. Je vous recontacte très bientôt !", false);
+        show(dict.msg_success, false);
       } else {
-        btn.disabled = false; btn.textContent = 'Envoyer';
-        show("L'envoi n'a pas abouti. Appelez le 07 68 67 95 55, c'est plus sûr.", true);
+        btn.disabled = false; btn.textContent = dict.btn_send;
+        show(dict.msg_error, true);
       }
     })
     .catch(function(){
-      btn.disabled = false; btn.textContent = 'Envoyer';
-      show("L'envoi n'a pas abouti. Appelez le 07 68 67 95 55, c'est plus sûr.", true);
+      btn.disabled = false; btn.textContent = dict.btn_send;
+      show(dict.msg_error, true);
     });
   });
 })();
