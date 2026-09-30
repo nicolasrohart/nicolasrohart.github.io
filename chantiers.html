@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="fr" translate="no">
+<head>
+<meta charset="UTF-8">
+<meta name="google" content="notranslate">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chantiers réalisés, commune par commune — Nicolas Rohart</title>
+<meta name="description" content="Élagage, abattage complexe et exploitation forestière en Creuse, Corrèze et Haute-Vienne : retrouvez le détail de chaque chantier réalisé, commune par commune.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://nicolasrohart.com/chantiers.html">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="Nicolas Rohart">
+<meta property="og:title" content="Chantiers réalisés, commune par commune - Nicolas Rohart">
+<meta property="og:description" content="Élagage, abattage complexe et exploitation forestière en Creuse, Corrèze et Haute-Vienne : retrouvez le détail de chaque chantier réalisé, commune par commune.">
+<meta property="og:url" content="https://nicolasrohart.com/chantiers.html">
+
+<link rel="preload" href="assets/fonts/piazzolla-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+  @font-face{
+    font-family:'Piazzolla'; font-style:normal; font-display:swap; font-weight:100 900;
+    src:url('assets/fonts/piazzolla-latin-wght-normal.woff2') format('woff2-variations');
+    unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+  }
+  @font-face{
+    font-family:'Piazzolla'; font-style:normal; font-display:swap; font-weight:100 900;
+    src:url('assets/fonts/piazzolla-latin-ext-wght-normal.woff2') format('woff2-variations');
+    unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;
+  }
+  @font-face{
+    font-family:'Inter'; font-style:normal; font-display:swap; font-weight:100 900;
+    src:url('assets/fonts/inter-latin-wght-normal.woff2') format('woff2-variations');
+    unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+  }
+  @font-face{
+    font-family:'Inter'; font-style:normal; font-display:swap; font-weight:100 900;
+    src:url('assets/fonts/inter-latin-ext-wght-normal.woff2') format('woff2-variations');
+    unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;
+  }
+  @font-face{
+    font-family:'IBM Plex Mono'; font-style:normal; font-display:swap; font-weight:500;
+    src:url('assets/fonts/ibm-plex-mono-latin-500-normal.woff2') format('woff2');
+    unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+  }
+  @font-face{
+    font-family:'IBM Plex Mono'; font-style:normal; font-display:swap; font-weight:500;
+    src:url('assets/fonts/ibm-plex-mono-latin-ext-500-normal.woff2') format('woff2');
+    unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;
+  }
+
+  :root{
+    --ink:#211D17; --paper:#FBFAF7; --paper-dim:#F2EFE8;
+    --forest:#202B24; --forest-2:#283630; --oak:#A9784A; --oak-soft:#C89A69;
+    --steel:#52646B; --alert:#F04E23; --line:#CFC6B2;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth; font-size:clamp(16px, 1.15vw + 5px, 30px);}
+  body{
+    background:var(--paper); color:var(--ink);
+    font-family:'Inter',sans-serif; font-size:1rem; line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    min-height:100vh; display:flex; flex-direction:column;
+  }
+  ::selection{background:var(--oak); color:var(--paper);}
+  a{color:inherit;}
+
+  .topbar{
+    display:flex; justify-content:space-between; align-items:center;
+    padding:0.5rem 5vw;
+    font-family:'IBM Plex Mono',monospace; font-size:0.7rem; letter-spacing:0.06em;
+    text-transform:uppercase; color:var(--steel);
+    border-bottom:1px solid var(--line);
+  }
+  .topbar a{text-decoration:none; display:inline-flex; align-items:center; gap:0.35em;}
+  .topbar a:hover{color:var(--oak);}
+  .topbar a .back-arrow{font-size:1.9em; line-height:1;}
+
+  .lang-switch{display:flex; gap:4px;}
+  .lang-btn{
+    font-family:'IBM Plex Mono',monospace; font-size:0.69rem; font-weight:700; letter-spacing:0.02em;
+    color:var(--steel); background:transparent; border:1px solid var(--line);
+    border-radius:0.9rem; padding:0.13rem 0.5rem 0.13rem 0.38rem; cursor:pointer;
+    transition:background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+    display:inline-flex; align-items:center; gap:5px; line-height:1;
+  }
+  .lang-btn svg{display:block; border-radius:2px; flex-shrink:0;}
+  .lang-btn:hover{border-color:var(--oak);}
+  .lang-btn.active{background:var(--oak); border-color:var(--oak); color:var(--paper);}
+
+  main{
+    flex:1; width:100%; max-width:40rem; margin:0 auto;
+    padding:2.4rem 5vw 3rem;
+  }
+  .eyebrow{
+    font-family:'IBM Plex Mono',monospace; font-size:0.84rem; font-weight:700;
+    letter-spacing:0.13em; text-transform:uppercase; color:var(--oak);
+    display:block; margin-bottom:0.55rem;
+  }
+  h1{
+    font-family:'Piazzolla',serif; font-weight:600; letter-spacing:-0.01em;
+    font-size:1.9rem; line-height:1.2; margin-bottom:0.9rem;
+  }
+  .lede{ font-size:1.05rem; color:var(--steel); margin-bottom:0.6rem; max-width:40ch; }
+  .lede strong{ color:var(--ink); font-weight:600; }
+
+  .commune-hl, .commune-hl-alt{ padding:0 0.15em; margin:0 -0.15em; border-radius:2px; }
+  .commune-hl{
+    font-weight:700; color:var(--forest);
+    background:linear-gradient(180deg, transparent 58%, rgba(200,154,105,0.55) 58%);
+  }
+  .commune-hl-alt{
+    font-weight:600; color:var(--ink);
+    background:linear-gradient(180deg, transparent 62%, rgba(207,198,178,0.75) 62%);
+  }
+  .map-wrap{ margin-bottom:2.2rem; max-width:26rem; }
+  .overview-map-frame{
+    position:relative; width:100%; aspect-ratio:1/1; border-radius:0.6rem;
+    overflow:hidden; border:1px solid var(--line); background:var(--paper-dim);
+  }
+  .overview-map-frame img{ position:absolute; inset:0; width:100%; height:100%; display:block; }
+  .overview-map-circle{
+    position:absolute; border:2px dashed var(--oak-soft); border-radius:50%;
+    background:rgba(169,120,74,0.10); pointer-events:none;
+  }
+  .overview-pin{
+    position:absolute; width:12px; height:12px; margin:-6px 0 0 -6px;
+    border-radius:50%; background:var(--line); border:1.5px solid var(--paper);
+    box-shadow:0 1px 3px rgba(33,29,23,0.35); display:block; text-decoration:none;
+  }
+  .overview-pin.is-link{
+    width:14px; height:14px; margin:-7px 0 0 -7px;
+    background:var(--oak); cursor:pointer;
+    transition:width 0.15s ease, height 0.15s ease, margin 0.15s ease, background 0.15s ease;
+  }
+  .overview-pin.is-link:hover, .overview-pin.is-link:focus{
+    width:19px; height:19px; margin:-9.5px 0 0 -9.5px; background:var(--forest);
+  }
+  .overview-pin-home{
+    position:absolute; width:16px; height:16px; margin:-8px 0 0 -8px;
+    border-radius:50%; background:var(--forest); border:2px solid var(--paper);
+    box-shadow:0 1px 3px rgba(33,29,23,0.35);
+  }
+  a.overview-pin-home{ display:block; text-decoration:none; cursor:pointer; }
+  .map-caption{ color:var(--steel); font-size:0.82rem; margin-top:0.5rem; max-width:38rem; }
+  .map-credit{ font-size:0.78em; opacity:0.85; }
+
+  .callout{
+    margin-bottom:2.2rem; padding:1rem 1.1rem;
+    background:var(--paper-dim); border-left:2px solid var(--oak);
+    font-size:0.9rem; color:var(--forest); max-width:38rem;
+  }
+  .callout b{font-family:'IBM Plex Mono',monospace; font-size:0.66rem; letter-spacing:0.08em; text-transform:uppercase; display:block; margin-bottom:6px; color:var(--oak);}
+
+  .directory-list{ display:flex; flex-direction:column; margin-bottom:2.2rem; }
+  .directory-item{ border-top:1px solid var(--line); padding:0.9rem 0; }
+  .directory-item:last-child{ border-bottom:1px solid var(--line); }
+  .directory-item h2{
+    font-family:'Piazzolla',serif; font-weight:600; font-size:1.02rem;
+    line-height:1.35; margin:0;
+  }
+  .directory-item h2 strong{ font-weight:700; color:var(--forest); }
+  .directory-item h2 .dept{
+    font-family:'IBM Plex Mono',monospace; font-weight:500; font-size:0.7rem;
+    color:var(--steel); letter-spacing:0.02em;
+  }
+  a.directory-link{
+    display:flex; align-items:baseline; justify-content:space-between; gap:0.8rem;
+    text-decoration:none; color:inherit;
+  }
+  a.directory-link:hover h2{ color:var(--oak); }
+  a.directory-link:hover h2 strong{ color:var(--oak); }
+  .directory-link .go{
+    font-family:'IBM Plex Mono',monospace; font-size:0.72rem; font-weight:700;
+    letter-spacing:0.03em; text-transform:uppercase; color:var(--oak);
+    white-space:nowrap; flex-shrink:0;
+  }
+  .directory-pending{ display:flex; align-items:baseline; justify-content:space-between; gap:0.8rem; opacity:0.75; }
+  .directory-pending h2{ color:var(--ink); }
+  .directory-pending .status{
+    font-family:'IBM Plex Mono',monospace; font-size:0.66rem; letter-spacing:0.06em;
+    text-transform:uppercase; color:var(--steel); white-space:nowrap; flex-shrink:0;
+  }
+
+  .back-row{ text-align:center; margin-bottom:1.8rem; }
+  /* Même style que les boutons du menu d'accueil (.la-menu a, index.html) */
+  a.back-cta{
+    display:inline-block;
+    font-family:'IBM Plex Mono',monospace; font-size:0.92rem; font-weight:700; letter-spacing:0.05em;
+    text-transform:uppercase;
+    color:var(--paper);
+    background:linear-gradient(135deg, var(--oak-soft), var(--oak) 60%);
+    padding:0.74rem 1.5rem; border-radius:1.6rem;
+    text-decoration:none; white-space:nowrap;
+    text-shadow:0 1px 1px rgba(33,29,23,0.35), 0 -1px 0 rgba(255,255,255,0.12);
+    box-shadow:0 3px 10px rgba(169,120,74,0.45), 0 1px 3px rgba(33,29,23,0.3);
+    border:1px solid var(--oak);
+    position:relative; overflow:hidden;
+    transition:background 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  a.back-cta::before{
+    content:""; position:absolute; top:0; left:-75%;
+    width:45%; height:100%;
+    background:linear-gradient(115deg, transparent, rgba(255,255,255,0.55), transparent);
+    transform:skewX(-20deg);
+    animation:la-shine 3.2s ease-in-out infinite;
+  }
+  @keyframes la-shine{
+    0%, 40%{ left:-75%; }
+    60%, 100%{ left:130%; }
+  }
+  a.back-cta:hover{background:linear-gradient(135deg, var(--oak-soft), var(--oak-soft)); border-color:var(--oak-soft); transform:translateY(-2px) scale(1.03); box-shadow:0 6px 16px rgba(169,120,74,0.6), 0 2px 6px rgba(33,29,23,0.3);}
+  @media (max-width:640px){
+    a.back-cta{font-size:13.5px; padding:11px 18px; letter-spacing:0.03em;}
+  }
+  .back-arrow{ display:inline-block; font-size:2em; line-height:0; vertical-align:-0.2em; }
+
+  .cta-row{ display:flex; flex-wrap:wrap; justify-content:center; align-items:center; gap:0.9rem; margin-top:0.6rem; }
+  .cta-row a.devis-cta{
+    display:inline-block;
+    font-family:'IBM Plex Mono',monospace; font-size:0.92rem; font-weight:700; letter-spacing:0.05em;
+    text-transform:uppercase;
+    color:var(--paper); background:linear-gradient(135deg, var(--oak-soft), var(--oak) 60%);
+    padding:0.8rem 1.7rem; border-radius:1.6rem;
+    text-decoration:none; white-space:nowrap;
+    text-shadow:0 1px 1px rgba(33,29,23,0.35), 0 -1px 0 rgba(255,255,255,0.12);
+    box-shadow:0 3px 12px rgba(169,120,74,0.5), 0 1px 3px rgba(33,29,23,0.3);
+    border:1px solid var(--oak);
+    transition:transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .cta-row a.devis-cta:hover{ transform:translateY(-2px); box-shadow:0 6px 18px rgba(169,120,74,0.6); }
+
+  footer a{color:inherit;}
+  footer{
+    padding:1rem 5vw 1.6rem; text-align:center;
+    font-family:'IBM Plex Mono',monospace; font-size:0.66rem;
+    letter-spacing:0.06em; color:var(--steel); border-top:1px solid var(--line);
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <a href="index.html"><span class="back-arrow">&larr;</span> Nicolas Rohart</a>
+  <div class="lang-switch" role="group" aria-label="Language switcher">
+    <button type="button" class="lang-btn" data-lang="fr" onclick="setLang('fr')">
+      <svg width="2.1em" height="1.35em" viewBox="0 0 3 2" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="1" height="2" x="0" fill="#0055A4"/><rect width="1" height="2" x="1" fill="#FFFFFF"/><rect width="1" height="2" x="2" fill="#EF4135"/></svg>
+      FR
+    </button>
+    <button type="button" class="lang-btn" data-lang="en" onclick="setLang('en')">
+      <svg width="2.1em" height="1.35em" viewBox="0 0 60 30" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="60" height="30" fill="#00247d"/><path d="M0,0 60,30M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30M60,0 0,30" stroke="#cf142b" stroke-width="2"/><path d="M30,0V30M0,15H60" stroke="#fff" stroke-width="10"/><path d="M30,0V30M0,15H60" stroke="#cf142b" stroke-width="6"/></svg>
+      EN
+    </button>
+  </div>
+</div>
+
+<main>
+
+  <div class="back-row">
+    <a href="index.html#exploitation-forestiere" class="back-cta" data-key="back_cta"><span class="back-arrow">&larr;</span> Retour au site</a>
+  </div>
+
+  <span class="eyebrow" data-key="eyebrow">Élagage &middot; Abattage Complexe &middot; Exploitation forestière</span>
+  <h1 data-key="h1">Chantiers réalisés</h1>
+  <p class="lede" data-key="lede">Élagage, abattage complexe et exploitation forestière en Creuse, Corrèze et Haute-Vienne. Je me déplace dans un rayon de <strong>45 minutes autour d'Eymoutiers</strong>.</p>
+
+  <div class="map-wrap">
+    <div class="overview-map-frame" id="overviewMap" data-center-lat="45.7098" data-center-lon="1.7293" data-zoom="9">
+      <img src="chantiers/carte-ensemble.jpg" alt="Carte du secteur d'intervention autour d'Eymoutiers" width="704" height="704">
+      <div class="overview-map-circle" id="overviewCircle" aria-hidden="true"></div>
+      <a class="overview-pin-home" href="chantiers/eymoutiers.html" data-lat="45.7400" data-lon="1.7433" title="Eymoutiers (87) — voir le chantier"></a>
+      <a class="overview-pin is-link" href="chantiers/chateauneuf-la-foret.html" data-lat="45.6926" data-lon="1.6104" title="Châteauneuf-la-Forêt (87) — voir le chantier"></a>
+      <a class="overview-pin is-link" href="chantiers/gentioux-pigerolles.html" data-lat="45.7853" data-lon="1.9950" title="Gentioux-Pigerolles (23) — voir le chantier"></a>
+      <a class="overview-pin is-link" href="chantiers/saint-leonard-de-noblat.html" data-lat="45.8446" data-lon="1.4990" title="Saint-Léonard-de-Noblat (87) — voir le chantier"></a>
+      <a class="overview-pin is-link" href="chantiers/glanges.html" data-lat="45.6652" data-lon="1.4633" title="Glanges (87) — voir le chantier"></a>
+      <a class="overview-pin is-link" href="chantiers/rilhac-treignac.html" data-lat="45.5285" data-lon="1.6912" title="Rilhac-Treignac (19) — voir le chantier"></a>
+      <a class="overview-pin is-link" href="chantiers/faux-la-montagne.html" data-lat="45.7517" data-lon="1.9356" title="Faux-la-Montagne (23) — voir le chantier"></a>
+      <a class="overview-pin is-link" href="chantiers/chamberet.html" data-lat="45.6038" data-lon="1.7177" title="Chamberet (19) — voir le chantier"></a>
+      <a class="overview-pin is-link" href="chantiers/la-croisille-sur-briance.html" data-lat="45.6196" data-lon="1.6011" title="La Croisille-sur-Briance (87) — voir le chantier"></a>
+      <a class="overview-pin is-link" href="chantiers/saint-bonnet-briance.html" data-lat="45.7138" data-lon="1.4870" title="Saint-Bonnet-Briance (87) — voir le chantier"></a>
+      <a class="overview-pin is-link" href="chantiers/masleon.html" data-lat="45.7686" data-lon="1.5772" title="Masléon (87) — voir le chantier"></a>
+      <a class="overview-pin is-link" href="chantiers/le-chatenet-en-dognon.html" data-lat="45.9053" data-lon="1.5025" title="Le Châtenet-en-Dognon (87) — voir le chantier"></a>
+    </div>
+    <p class="map-caption" data-key="map_caption">Secteur d'intervention. <span class="map-credit">Fond de carte : Google.</span></p>
+  </div>
+
+  <div class="callout">
+    <b data-key="reussite_title">100% de réussite</b>
+    <span data-key="reussite_text">Un de ces chantiers était près de chez vous ? Si vous le souhaitez, je peux vous dire qui était le client&nbsp;: vous le connaissez peut-être et dans ce cas vous aurez son avis en direct et sans filtre ! N'hésitez pas à me contacter pour ça.</span>
+  </div>
+
+  <div class="directory-list">
+
+    <div class="directory-item">
+      <a class="directory-link" href="chantiers/chamberet.html">
+        <h2 data-key="h_chamberet">À <strong class="commune-hl">Chamberet</strong> <span class="dept">(19)</span> près de <span class="commune-hl-alt">Saint-Hilaire-les-Courbes</span> <span class="dept">(19)</span> et <span class="commune-hl-alt">Lacelle</span> <span class="dept">(19)</span></h2>
+        <span class="go" data-key="go">Voir &rarr;</span>
+      </a>
+    </div>
+
+    <div class="directory-item">
+      <a class="directory-link" href="chantiers/chateauneuf-la-foret.html">
+        <h2 data-key="h_chateauneuf">À <strong class="commune-hl">Châteauneuf-la-Forêt</strong> <span class="dept">(87)</span> proche de la jonction avec <span class="commune-hl-alt">Sainte-Anne-Saint-Priest</span> <span class="dept">(87)</span> et <span class="commune-hl-alt">Sussac</span> <span class="dept">(87)</span></h2>
+        <span class="go" data-key="go">Voir &rarr;</span>
+      </a>
+    </div>
+
+    <div class="directory-item">
+      <a class="directory-link" href="chantiers/eymoutiers.html">
+        <h2 data-key="h_eymoutiers">À <strong class="commune-hl">Eymoutiers</strong>, dans le bourg <span class="dept">(87)</span></h2>
+        <span class="go" data-key="go">Voir &rarr;</span>
+      </a>
+    </div>
+
+    <div class="directory-item">
+      <a class="directory-link" href="chantiers/faux-la-montagne.html">
+        <h2 data-key="h_faux">À <strong class="commune-hl">Faux-la-Montagne</strong> <span class="dept">(23)</span>, dans le bourg</h2>
+        <span class="go" data-key="go">Voir &rarr;</span>
+      </a>
+    </div>
+
+    <div class="directory-item">
+      <a class="directory-link" href="chantiers/gentioux-pigerolles.html">
+        <h2 data-key="h_gentioux">À <strong class="commune-hl">Gentioux-Pigerolles</strong> <span class="dept">(23)</span>, dans le bourg</h2>
+        <span class="go" data-key="go">Voir &rarr;</span>
+      </a>
+    </div>
+
+    <div class="directory-item">
+      <a class="directory-link" href="chantiers/glanges.html">
+        <h2 data-key="h_glanges">À <strong class="commune-hl">Glanges</strong> <span class="dept">(87)</span>, tout près de <span class="commune-hl-alt">Saint-Germain-les-Belles</span> <span class="dept">(87)</span></h2>
+        <span class="go" data-key="go">Voir &rarr;</span>
+      </a>
+    </div>
+
+    <div class="directory-item">
+      <a class="directory-link" href="chantiers/la-croisille-sur-briance.html">
+        <h2 data-key="h_croisille">À <strong class="commune-hl">La Croisille-sur-Briance</strong> <span class="dept">(87)</span> proche de <span class="commune-hl-alt">Saint-Vitte-sur-Briance</span> <span class="dept">(87)</span></h2>
+        <span class="go" data-key="go">Voir &rarr;</span>
+      </a>
+    </div>
+
+    <div class="directory-item">
+      <a class="directory-link" href="chantiers/le-chatenet-en-dognon.html">
+        <h2 data-key="h_chatenet">À <strong class="commune-hl">Le Châtenet-en-Dognon</strong> <span class="dept">(87)</span> près de <span class="commune-hl-alt">Saint-Martin-Terressus</span> <span class="dept">(87)</span> et <span class="commune-hl-alt">Saint-Priest-Taurion</span> <span class="dept">(87)</span></h2>
+        <span class="go" data-key="go">Voir &rarr;</span>
+      </a>
+    </div>
+
+    <div class="directory-item">
+      <a class="directory-link" href="chantiers/masleon.html">
+        <h2 data-key="h_masleon">À <strong class="commune-hl">Masléon</strong> <span class="dept">(87)</span> proche de la jonction avec <span class="commune-hl-alt">Saint-Denis-des-Murs</span> <span class="dept">(87)</span> et <span class="commune-hl-alt">Roziers-Saint-Georges</span> <span class="dept">(87)</span></h2>
+        <span class="go" data-key="go">Voir &rarr;</span>
+      </a>
+    </div>
+
+    <div class="directory-item">
+      <a class="directory-link" href="chantiers/rilhac-treignac.html">
+        <h2 data-key="h_rilhac">À <strong class="commune-hl">Rilhac-Treignac</strong> <span class="dept">(19)</span> proche de la jonction avec <span class="commune-hl-alt">Soudaine-Lavinadière</span> <span class="dept">(19)</span> et <span class="commune-hl-alt">Meilhards</span> <span class="dept">(19)</span></h2>
+        <span class="go" data-key="go">Voir &rarr;</span>
+      </a>
+    </div>
+
+    <div class="directory-item">
+      <a class="directory-link" href="chantiers/saint-bonnet-briance.html">
+        <h2 data-key="h_stbonnet">À <strong class="commune-hl">Saint-Bonnet-Briance</strong> <span class="dept">(87)</span> côté <span class="commune-hl-alt">Linards</span> <span class="dept">(87)</span></h2>
+        <span class="go" data-key="go">Voir &rarr;</span>
+      </a>
+    </div>
+
+    <div class="directory-item">
+      <a class="directory-link" href="chantiers/saint-leonard-de-noblat.html">
+        <h2 data-key="h_stleonard">À <strong class="commune-hl">Saint-Léonard-de-Noblat</strong> <span class="dept">(87)</span>, tout proche de <span class="commune-hl-alt">Royères</span> <span class="dept">(87)</span></h2>
+        <span class="go" data-key="go">Voir &rarr;</span>
+      </a>
+    </div>
+
+  </div>
+
+  <div class="cta-row">
+    <a href="index.html#exploitation-forestiere" class="back-cta" data-key="back_cta_bottom"><span class="back-arrow">&larr;</span> Retour au site</a>
+    <a href="devis.html" class="devis-cta" data-key="devis_btn">Demander un devis</a>
+  </div>
+</main>
+
+<footer><span data-key="footer">Nicolas Rohart EI &middot; SIREN 528 893 597 &middot; Eymoutiers, Haute-Vienne &middot; </span><a href="index.html#mentions" data-key="footer_link">Mentions légales</a></footer>
+
+<script>
+  var currentLang = 'fr';
+
+  var I18N = {
+    fr: {
+      eyebrow: "Élagage &middot; Abattage Complexe &middot; Exploitation forestière",
+      h1: "Chantiers réalisés",
+      back_cta: "<span class='back-arrow'>&larr;</span> Retour au site",
+      back_cta_bottom: "<span class='back-arrow'>&larr;</span> Retour au site",
+      lede: 'Élagage, abattage complexe et exploitation forestière en Creuse, Corrèze et Haute-Vienne. Je me déplace dans un rayon de <strong>45 minutes autour d\'Eymoutiers</strong>.',
+      map_caption: "Secteur d'intervention. <span class='map-credit'>Fond de carte : Google.</span>",
+      reussite_title: "100% de réussite",
+      reussite_text: "Un de ces chantiers était près de chez vous ? Si vous le souhaitez, je peux vous dire qui était le client&nbsp;: vous le connaissez peut-être et dans ce cas vous aurez son avis en direct et sans filtre ! N'hésitez pas à me contacter pour ça.",
+      go: "Voir &rarr;",
+      pending: "Page à venir",
+      h_chateauneuf: 'À <strong class="commune-hl">Châteauneuf-la-Forêt</strong> <span class="dept">(87)</span> proche de la jonction avec <span class="commune-hl-alt">Sainte-Anne-Saint-Priest</span> <span class="dept">(87)</span> et <span class="commune-hl-alt">Sussac</span> <span class="dept">(87)</span>',
+      h_gentioux: 'À <strong class="commune-hl">Gentioux-Pigerolles</strong> <span class="dept">(23)</span>, dans le bourg',
+      h_stleonard: 'À <strong class="commune-hl">Saint-Léonard-de-Noblat</strong> <span class="dept">(87)</span>, tout proche de <span class="commune-hl-alt">Royères</span> <span class="dept">(87)</span>',
+      h_glanges: 'À <strong class="commune-hl">Glanges</strong> <span class="dept">(87)</span>, tout près de <span class="commune-hl-alt">Saint-Germain-les-Belles</span> <span class="dept">(87)</span>',
+      h_rilhac: 'À <strong class="commune-hl">Rilhac-Treignac</strong> <span class="dept">(19)</span> proche de la jonction avec <span class="commune-hl-alt">Soudaine-Lavinadière</span> <span class="dept">(19)</span> et <span class="commune-hl-alt">Meilhards</span> <span class="dept">(19)</span>',
+      h_faux: 'À <strong class="commune-hl">Faux-la-Montagne</strong> <span class="dept">(23)</span>, dans le bourg',
+      h_chamberet: 'À <strong class="commune-hl">Chamberet</strong> <span class="dept">(19)</span> près de <span class="commune-hl-alt">Saint-Hilaire-les-Courbes</span> <span class="dept">(19)</span> et <span class="commune-hl-alt">Lacelle</span> <span class="dept">(19)</span>',
+      h_croisille: 'À <strong class="commune-hl">La Croisille-sur-Briance</strong> <span class="dept">(87)</span> proche de <span class="commune-hl-alt">Saint-Vitte-sur-Briance</span> <span class="dept">(87)</span>',
+      h_eymoutiers: 'À <strong class="commune-hl">Eymoutiers</strong>, dans le bourg <span class="dept">(87)</span>',
+      h_stbonnet: 'À <strong class="commune-hl">Saint-Bonnet-Briance</strong> <span class="dept">(87)</span> côté <span class="commune-hl-alt">Linards</span> <span class="dept">(87)</span>',
+      h_masleon: 'À <strong class="commune-hl">Masléon</strong> <span class="dept">(87)</span> proche de la jonction avec <span class="commune-hl-alt">Saint-Denis-des-Murs</span> <span class="dept">(87)</span> et <span class="commune-hl-alt">Roziers-Saint-Georges</span> <span class="dept">(87)</span>',
+      h_chatenet: 'À <strong class="commune-hl">Le Châtenet-en-Dognon</strong> <span class="dept">(87)</span> près de <span class="commune-hl-alt">Saint-Martin-Terressus</span> <span class="dept">(87)</span> et <span class="commune-hl-alt">Saint-Priest-Taurion</span> <span class="dept">(87)</span>',
+      devis_btn: "Demander un devis",
+      footer: "Nicolas Rohart EI &middot; SIREN 528 893 597 &middot; Eymoutiers, Haute-Vienne &middot; ",
+      footer_link: "Mentions légales"
+    },
+    en: {
+      eyebrow: "Tree Pruning &middot; Complex Felling &middot; Forestry",
+      h1: "Completed projects",
+      back_cta: "<span class='back-arrow'>&larr;</span> Back to the site",
+      back_cta_bottom: "<span class='back-arrow'>&larr;</span> Back to the site",
+      lede: 'Tree pruning, complex felling and forestry work in the Creuse, Corrèze and Haute-Vienne. I travel within a <strong>45-minute radius around Eymoutiers</strong>.',
+      map_caption: "Service area. <span class='map-credit'>Map: Google.</span>",
+      reussite_title: "100% success rate",
+      reussite_text: "Was one of these projects near you? If you'd like, I can tell you who the client was &mdash; you may know them, and if so you'll get their honest, first-hand opinion! Feel free to get in touch about it.",
+      go: "View &rarr;",
+      pending: "Coming soon",
+      h_chateauneuf: 'In <strong class="commune-hl">Châteauneuf-la-Forêt</strong> <span class="dept">(87)</span>, near the point where it meets <span class="commune-hl-alt">Sainte-Anne-Saint-Priest</span> <span class="dept">(87)</span> and <span class="commune-hl-alt">Sussac</span> <span class="dept">(87)</span>',
+      h_gentioux: 'In <strong class="commune-hl">Gentioux-Pigerolles</strong> <span class="dept">(23)</span>, in the village centre',
+      h_stleonard: 'In <strong class="commune-hl">Saint-Léonard-de-Noblat</strong> <span class="dept">(87)</span>, right next to <span class="commune-hl-alt">Royères</span> <span class="dept">(87)</span>',
+      h_glanges: 'In <strong class="commune-hl">Glanges</strong> <span class="dept">(87)</span>, very close to <span class="commune-hl-alt">Saint-Germain-les-Belles</span> <span class="dept">(87)</span>',
+      h_rilhac: 'In <strong class="commune-hl">Rilhac-Treignac</strong> <span class="dept">(19)</span>, near the point where it meets <span class="commune-hl-alt">Soudaine-Lavinadière</span> <span class="dept">(19)</span> and <span class="commune-hl-alt">Meilhards</span> <span class="dept">(19)</span>',
+      h_faux: 'In <strong class="commune-hl">Faux-la-Montagne</strong> <span class="dept">(23)</span>, in the village centre',
+      h_chamberet: 'In <strong class="commune-hl">Chamberet</strong> <span class="dept">(19)</span>, near <span class="commune-hl-alt">Saint-Hilaire-les-Courbes</span> <span class="dept">(19)</span> and <span class="commune-hl-alt">Lacelle</span> <span class="dept">(19)</span>',
+      h_croisille: 'In <strong class="commune-hl">La Croisille-sur-Briance</strong> <span class="dept">(87)</span>, near <span class="commune-hl-alt">Saint-Vitte-sur-Briance</span> <span class="dept">(87)</span>',
+      h_eymoutiers: 'In <strong class="commune-hl">Eymoutiers</strong> village centre <span class="dept">(87)</span>',
+      h_stbonnet: 'In <strong class="commune-hl">Saint-Bonnet-Briance</strong> <span class="dept">(87)</span>, on the <span class="commune-hl-alt">Linards</span> side <span class="dept">(87)</span>',
+      h_masleon: 'In <strong class="commune-hl">Masléon</strong> <span class="dept">(87)</span>, near the point where it meets <span class="commune-hl-alt">Saint-Denis-des-Murs</span> <span class="dept">(87)</span> and <span class="commune-hl-alt">Roziers-Saint-Georges</span> <span class="dept">(87)</span>',
+      h_chatenet: 'In <strong class="commune-hl">Le Châtenet-en-Dognon</strong> <span class="dept">(87)</span>, near <span class="commune-hl-alt">Saint-Martin-Terressus</span> <span class="dept">(87)</span> and <span class="commune-hl-alt">Saint-Priest-Taurion</span> <span class="dept">(87)</span>',
+      devis_btn: "Request a quote",
+      footer: "Nicolas Rohart, sole trader &middot; SIREN 528 893 597 &middot; Eymoutiers, Haute-Vienne &middot; ",
+      footer_link: "Legal notice"
+    }
+  };
+
+  function applyLang(lang){
+    currentLang = lang;
+    document.documentElement.lang = lang;
+    var dict = I18N[lang];
+    document.querySelectorAll('[data-key]').forEach(function(el){
+      var key = el.getAttribute('data-key');
+      if (dict[key] !== undefined) el.innerHTML = dict[key];
+    });
+    document.querySelectorAll('.lang-btn').forEach(function(btn){
+      btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+    });
+  }
+
+  function setLang(lang){
+    applyLang(lang);
+    try{ localStorage.setItem('site-lang', lang); }catch(e){}
+  }
+
+  (function(){
+    var stored = null;
+    try{ stored = localStorage.getItem('site-lang'); }catch(e){}
+    var initial = (stored === 'fr' || stored === 'en') ? stored : 'fr';
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', function(){ applyLang(initial); });
+    } else {
+      applyLang(initial);
+    }
+  })();
+
+  // Positionne les points et le cercle "~45 min" sur la vraie carte, à partir de
+  // coordonnées réelles (lat/lon), avec l'échelle standard des cartes web (mètres par
+  // pixel selon le niveau de zoom). Recalculé au chargement et au redimensionnement,
+  // pour rester juste quel que soit la taille d'écran.
+  function positionOverviewMap(){
+    var frame = document.getElementById('overviewMap');
+    if(!frame) return;
+    var w = frame.clientWidth, h = frame.clientHeight;
+    if(!w || !h) return;
+    // Carte figée (image de 704 px de côté) : tout se met à l\'échelle du cadre affiché.
+    var s = w / 704;
+    var centerLat = parseFloat(frame.getAttribute('data-center-lat'));
+    var centerLon = parseFloat(frame.getAttribute('data-center-lon'));
+    var zoom = parseFloat(frame.getAttribute('data-zoom'));
+    var centerLatRad = centerLat * Math.PI / 180;
+    var metersPerPixel = 156543.03392 * Math.cos(centerLatRad) / Math.pow(2, zoom);
+
+    // La carte est recadrée (iframe surdimensionné + décalé, voir CSS) pour masquer
+    // les éléments d'interface de Google Maps. Ça déplace le point "centre réel" de
+    // la carte de (+20px, +50px) par rapport au centre géométrique du cadre — ce
+    // décalage doit être répercuté ici pour que les points restent bien à leur place.
+    // (surdimension 260px : centre iframe à +130px, moins le décalage 110 / 80)
+    var cropOffsetX = 20, cropOffsetY = 50;
+
+    frame.querySelectorAll('[data-lat][data-lon]').forEach(function(el){
+      var lat = parseFloat(el.getAttribute('data-lat'));
+      var lon = parseFloat(el.getAttribute('data-lon'));
+      var dxM = (lon - centerLon) * 111320 * Math.cos(centerLatRad);
+      var dyM = (lat - centerLat) * 110540;
+      var x = w / 2 + (dxM / metersPerPixel + cropOffsetX) * s;
+      var y = h / 2 + (-dyM / metersPerPixel + cropOffsetY) * s;
+      el.style.left = x + 'px';
+      el.style.top = y + 'px';
+    });
+
+    var circle = document.getElementById('overviewCircle');
+    if(circle){
+      // Cercle "~45 min" légèrement décalé vers l'ouest (par rapport à Eymoutiers)
+      // pour inclure Limoges (45.8567, 1.226) tout juste dans le rayon.
+      var radiusPx = 34000 / metersPerPixel * s; // ~34 km à vol d'oiseau, indicatif (réduit le 29/09 à la demande de Nicolas)
+      var offsetXm = -6000; // décalage vers l'ouest, en mètres
+      var cx = w / 2 + (offsetXm / metersPerPixel + cropOffsetX) * s;
+      var cy = h / 2 + cropOffsetY * s;
+      circle.style.width = (radiusPx * 2) + 'px';
+      circle.style.height = (radiusPx * 2) + 'px';
+      circle.style.left = (cx - radiusPx) + 'px';
+      circle.style.top = (cy - radiusPx) + 'px';
+    }
+  }
+  window.addEventListener('load', positionOverviewMap);
+  document.addEventListener('DOMContentLoaded', positionOverviewMap);
+  (function(){
+    var t;
+    window.addEventListener('resize', function(){
+      clearTimeout(t);
+      t = setTimeout(positionOverviewMap, 150);
+    });
+  })();
+</script>
+
+</body>
+</html>

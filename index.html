@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="google" content="notranslate">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nicolas Rohart - Élagage, abattage, construction</title>
+<title>Élagage, Abattage, Construction à Eymoutiers | Nicolas Rohart</title>
 <meta name="description" content="J'interviens sur toute la filière du bois - gestion forestière, exploitation, élagage et abattage complexe, conception numérique, façonnage robotisé et construction sur site.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://nicolasrohart.com/">
@@ -103,8 +103,8 @@
 
   :root{
     --ink: #211D17;
-    --paper: #F6F3EC;
-    --paper-dim: #EDE8DC;
+    --paper: #FBFAF7;
+    --paper-dim: #F2EFE8;
     --forest: #202B24;
     --forest-2: #283630;
     --oak: #A9784A;
@@ -112,7 +112,7 @@
     --steel: #52646B;
     --alert: #F04E23;
     --line: #CFC6B2;
-    --line-dark: rgba(246,243,236,0.22);
+    --line-dark: rgba(251,250,247,0.22);
   }
   *{box-sizing:border-box; margin:0; padding:0;}
   html{scroll-behavior:smooth; font-size:clamp(16px, 1.15vw + 5px, 30px);}
@@ -265,7 +265,7 @@
   }
   .hero-grain{
     position:absolute; inset:0; opacity:0.05; pointer-events:none;
-    background-image:repeating-linear-gradient(115deg, transparent 0 18px, rgba(246,243,236,0.6) 18px 19px);
+    background-image:repeating-linear-gradient(115deg, transparent 0 18px, rgba(251,250,247,0.6) 18px 19px);
   }
   .hero-illustration{
     position:absolute; inset:0; margin:auto;
@@ -312,7 +312,7 @@
     margin-top:28px;
     max-width:42ch;
     font-size:1.1rem;
-    color:rgba(246,243,236,0.82);
+    color:rgba(251,250,247,0.82);
     font-weight:400;
   }
   @media (max-width:760px){ .hero p.lede{max-width:60ch;} }
@@ -325,7 +325,7 @@
     gap:20px 24px;
     font-family:'IBM Plex Mono',monospace;
     font-size:0.75rem;
-    color:rgba(246,243,236,0.6);
+    color:rgba(251,250,247,0.6);
   }
   .hero-fields div b{
     display:block; color:var(--paper); font-size:0.81rem; margin-top:4px; font-weight:500;
@@ -435,8 +435,29 @@
   .photo-slot.has-image img.img-pergola{object-position:center 22%;}
   .photo-slot.natural{aspect-ratio:auto; align-self:start;}
   .photo-slot.natural img{width:100%; height:auto; object-fit:contain;}
+  /* Bloc Élagage sur fond vert forêt (choix de Nicolas, 30/09/2026) */
+  #abattages-complexes{background:var(--forest);}
+  #abattages-complexes h2{color:var(--paper);}
+  #abattages-complexes .eyebrow{color:var(--oak-soft);}
+  #abattages-complexes .local-lede{color:rgba(251,250,247,0.72);}
+  #abattages-complexes .local-list li{color:var(--paper); border-bottom-color:var(--line-dark);}
+  #abattages-complexes .callout{background:var(--forest-2); color:var(--paper);}
+  #abattages-complexes .callout b{color:var(--oak-soft);}
+  #abattages-complexes .inline-link{color:var(--oak-soft);}
+  #abattages-complexes .inline-link:hover{color:var(--paper);}
+  #abattages-complexes .callout{margin-top:34px;}
+  #abattages-complexes .devis-cta{margin-top:38px;}
   #abattages-complexes .local-lede{max-width:40ch;}
-  #abattages-complexes .photo-slot.natural{width:82%; margin-top:-190px;}
+  #abattages-complexes .photo-slot.natural{width:100%; margin-top:-190px;}
+  #abattages-complexes .photo-slot.natural{border:0; background:transparent; gap:14px;}
+  #abattages-complexes .photo-slot.natural img{border:1px solid var(--forest-2);}
+  #abattages-complexes .photo-slot.natural img:first-child{width:90%; align-self:flex-end;}
+  #abattages-complexes .photo-slot.natural img + img{width:72%; align-self:flex-end;}
+  @media (min-width:841px){ #abattages-complexes .local-grid{grid-template-columns:0.85fr 1.15fr;} }
+
+  /* Photo de clôture, juste avant le pied de page */
+  .closing-photo{ background:var(--paper); padding:48px 5vw 56px; display:flex; justify-content:center; }
+  .closing-photo img{ display:block; width:100%; max-width:820px; height:auto; }
 
   .photo-trio{display:flex; gap:10px; align-items:flex-start;}
   .photo-trio .photo-slot{
@@ -501,7 +522,7 @@
 
   .research{background:var(--forest-2); color:var(--paper);}
   .research .section-label h2{color:var(--paper); font-size:1.5rem;}
-  .research .section-label p{color:rgba(246,243,236,0.7); font-size:0.86rem;}
+  .research .section-label p{color:rgba(251,250,247,0.7); font-size:0.86rem;}
   .research-grid{
     max-width:min(88vw, 1750px); margin:2vh auto 0;
     display:grid; grid-template-columns:repeat(3,1fr); gap:1px;
@@ -512,7 +533,7 @@
   }
   .research-card .eyebrow{color:var(--oak-soft); margin-bottom:10px; display:block; font-size:0.74rem;}
   .research-card h4{font-family:'Piazzolla',serif; font-weight:500; font-size:0.92rem; margin-bottom:8px; line-height:1.3;}
-  .research-card p{font-size:0.8rem; color:rgba(246,243,236,0.72); line-height:1.45;}
+  .research-card p{font-size:0.8rem; color:rgba(251,250,247,0.72); line-height:1.45;}
   @media (max-width:840px){ .research-grid{grid-template-columns:1fr;} }
 
   /* ---------- CTA ---------- */
@@ -522,14 +543,6 @@
   .cta h2{font-size:2.1rem; max-width:20ch; margin:0 auto 20px;}
   html[lang="fr"] .cta h2{max-width:34ch;}
   .cta p{max-width:54ch; margin:0 auto; color:var(--steel); font-size:1.05rem;}
-  .cta-tags{
-    margin-top:32px; display:flex; gap:10px; justify-content:center; flex-wrap:wrap;
-  }
-  .cta-tags span{
-    font-family:'IBM Plex Mono',monospace; font-size:0.72rem; letter-spacing:0.05em;
-    border:1px solid var(--oak); color:var(--forest);
-    padding:7px 14px; border-radius:100px;
-  }
 
   /* ---------- Local business sections (French) ---------- */
   .lang-marker{
@@ -539,11 +552,11 @@
     background:
       radial-gradient(ellipse at 75% 15%, rgba(169,120,74,0.16), transparent 55%),
       var(--forest);
-    border-top:1px solid rgba(246,243,236,0.15); border-bottom:1px solid rgba(246,243,236,0.15);
+    border-top:1px solid rgba(251,250,247,0.15); border-bottom:1px solid rgba(251,250,247,0.15);
   }
   .lang-marker-grain{
     position:absolute; inset:0; opacity:0.05; pointer-events:none;
-    background-image:repeating-linear-gradient(115deg, transparent 0 18px, rgba(246,243,236,0.6) 18px 19px);
+    background-image:repeating-linear-gradient(115deg, transparent 0 18px, rgba(251,250,247,0.6) 18px 19px);
   }
   .lang-marker span{
     position:relative; z-index:1;
@@ -583,13 +596,13 @@
   }
   footer h2{font-size:1.9rem; max-width:12ch; color:var(--paper);}
   .contact-links{display:flex; flex-direction:column; gap:10px; font-family:'IBM Plex Mono',monospace; font-size:0.84rem;}
-  .contact-links a{text-decoration:none; border-bottom:1px solid rgba(246,243,236,0.35); padding-bottom:2px; width:fit-content;}
+  .contact-links a{text-decoration:none; border-bottom:1px solid rgba(251,250,247,0.35); padding-bottom:2px; width:fit-content;}
   .contact-links a:hover{border-color:var(--oak-soft); color:var(--oak-soft);}
   .email-row{display:flex; align-items:center; gap:10px;}
-  .email-row a{border-bottom:1px solid rgba(246,243,236,0.35);}
+  .email-row a{border-bottom:1px solid rgba(251,250,247,0.35);}
   .copy-btn{
     font-family:'IBM Plex Mono',monospace; font-size:0.69rem; letter-spacing:0.02em;
-    background:transparent; color:inherit; border:1px solid rgba(246,243,236,0.35);
+    background:transparent; color:inherit; border:1px solid rgba(251,250,247,0.35);
     border-radius:3px; padding:2px 8px; cursor:pointer; opacity:0.8;
     transition:opacity 0.2s ease, border-color 0.2s ease;
   }
@@ -603,7 +616,7 @@
     display:grid; grid-template-columns:repeat(3, minmax(0,1fr));
     gap:12px 36px;
     font-family:'IBM Plex Mono',monospace; font-size:0.63rem; line-height:1.55;
-    color:rgba(246,243,236,0.5);
+    color:rgba(251,250,247,0.5);
   }
   @media (max-width:840px){ .footer-legal{grid-template-columns:1fr; gap:22px;} }
   .fl-label{
@@ -611,7 +624,7 @@
     font-size:0.6rem; font-weight:700; letter-spacing:0.13em; text-transform:uppercase;
     color:var(--oak-soft);
   }
-  .footer-legal a{color:rgba(246,243,236,0.7); text-decoration:none; border-bottom:1px solid rgba(246,243,236,0.25);}
+  .footer-legal a{color:rgba(251,250,247,0.7); text-decoration:none; border-bottom:1px solid rgba(251,250,247,0.25);}
   .footer-legal a:hover{color:var(--oak-soft); border-color:var(--oak-soft);}
 
   .footer-titleblock{
@@ -620,7 +633,7 @@
     padding-top:10px;
     display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px 24px;
     font-family:'IBM Plex Mono',monospace; font-size:0.62rem; letter-spacing:0.06em;
-    color:rgba(246,243,236,0.35);
+    color:rgba(251,250,247,0.35);
   }
 
   /* scroll reveal */
@@ -640,6 +653,8 @@
     /* la derniere image remontait de 190 px sur le texte : la regle mobile
        ecrite plus haut etait ecrasee par celle du bureau, qui vient apres */
     #abattages-complexes .photo-slot.natural{ width:100%; margin-top:26px; }
+    #abattages-complexes .photo-slot.natural img:first-child{ width:100%; }
+    #abattages-complexes .photo-slot.natural img + img{ width:100%; }
   }
 
   @media (prefers-reduced-motion: reduce){ .reveal{opacity:1; transform:none; transition:none;} html{scroll-behavior:auto;} }
@@ -723,7 +738,7 @@
 </header>
 
 <div class="intro reveal">
-  <p data-key="intro_p">Formé à l'exploitation à l'école, à la forêt en y habitant et enfin à la robotique aux côtés d'un expert, je peux désormais aussi bien semer une pépinière forestière d'enrichissement que générer des trajectoires d'usinage pour un robot. Au besoin, je suis les projets de construction de bout en bout, des arbres que je choisis en forêt jusqu'à la structure finie.</p>
+  <p data-key="intro_p">Formé à l'exploitation à l'école, à la forêt en y habitant et enfin à la robotique aux côtés d'un expert, je peux désormais aussi bien semer une pépinière forestière d'enrichissement que générer des trajectoires d'usinage pour un robot. Au besoin, je peux suivre un projet de construction de bout en bout, avec un charpentier qualifié, des arbres que je choisis en forêt jusqu'à la structure finie.</p>
 </div>
 
 <section class="section-label reveal">
@@ -760,7 +775,7 @@
         <span class="eyebrow" data-key="step2_eyebrow">Coupe &amp; Débardage</span>
         <h3 data-key="step2_h3">La matière en direct</h3>
         <p data-key="step2_p1">Je bûcheronne et débarde les bois moi-même - ce qui me place en contact physique direct avec les fibres ligneuses, dès le départ. Ce qu'un arbre devient en forêt, à l'atelier, et sur un chantier de construction s'influencent mutuellement.</p>
-        <p data-key="step2_p2">Il y a douze ans, j'ai construit mon propre engin de débardage à partir d'un châssis de camion 4x4 (service incendie reconverti) - carrosserie, installation d'une grue, soudure structurelle,... et enfin réception à titre isolé pour la circulation routière. Cette machine originale me permet de contrôler précisément la qualité du travail sur le site.</p>
+        <p data-key="step2_p2">Il y a douze ans, j'ai construit mon propre engin de débardage à partir d'un châssis de camion 4x4 (service incendie reconverti) - carrosserie, installation d'une grue, soudure structurelle,... et enfin réception pour la circulation routière. Cette machine originale me permet de contrôler précisément la qualité du travail sur le site.</p>
       </div>
       <div class="photo-slot has-image">
         <img src="assets/stage2-harvest.jpg" alt="KUKA robotic arm sawing a curved log, close-up" loading="lazy">
@@ -821,8 +836,12 @@
     <div class="chain-grid">
       <div>
         <span class="eyebrow" data-key="step5_eyebrow">Construction sur site</span>
-        <h3 data-key="step5_h3">Des fondations à la structure finie</h3>
-        <p data-key="step5_p1">Je propose deux modalités distinctes à mes clients : la taille sur mesure des pièces de bois sur plans fournis ; ou le suivi complet du chantier de construction. Pour le montage sur site, je m'appuie sur la qualification de charpentiers expérimentés et j'accompagne le choix des autres corps de métier.<br>Un arbre tient debout plusieurs décennies, voire des siècles, juste avec de l'eau, de l'air, du sol et de la lumière - difficile de trouver meilleure source d'inspiration pour construire un bâtiment écologique et durable.</p>
+        <h3 data-key="step5_h3">De l'atelier à la structure montée</h3>
+        <p data-key="step5_p1">Deux façons de construire ensemble. Vous êtes charpentier : je taille au robot les pièces de votre projet, sur vos plans, et je peux vous rejoindre au montage. Vous portez un projet de construction : je peux le suivre de bout en bout, avec un charpentier qualifié et des plans validés par un professionnel, et vous aider à choisir les autres artisans.<br>Un arbre tient debout plusieurs décennies, voire des siècles, juste avec de l'eau, de l'air, du sol et de la lumière - difficile de trouver meilleure source d'inspiration pour construire un bâtiment écologique et durable.</p>
+        <div class="callout callout-spaced">
+          <b data-key="expl_callout_title">Recrutement</b>
+          <span data-key="expl_callout_text">Vous êtes charpentier qualifié ? Rejoignez l'aventure et construisons autrement, avec le bois tel qu'il est. Contactez-moi directement via les coordonnées en bas de page.</span>
+        </div>
       </div>
       <div class="photo-slot has-image">
         <img src="assets/stage5-site.jpg" alt="Wood-framed pergola built onto a traditional stone house" loading="lazy" class="img-pergola">
@@ -868,7 +887,6 @@
   <div class="section-label">
     <span class="eyebrow" data-key="research_eyebrow">Recherche &amp; Reconnaissance</span>
     <h2 data-key="research_h2">La place de ce travail dans le domaine</h2>
-    <p data-key="research_p">Un champ de recherche international restreint, et en plein essor.</p>
   </div>
   <div class="research-grid">
     <div class="research-card">
@@ -893,13 +911,6 @@
   <span class="eyebrow" data-key="cta_eyebrow">Ce que je recherche</span>
   <h2 data-key="cta_h2">Des personnes qui se posent les mêmes questions - foresterie éthique et transformation du bois pertinente -<br>et qui veulent agir.</h2>
   <p data-key="cta_p">Quinze ans à parcourir toute la chaîne, de la forêt à la structure finie, et maintenant les compétences logicielles et robotiques pour aller plus loin. Installé en Limousin, entre forêt sauvage et site de production atypique, je serais heureux d'échanger avec des personnes travaillant sur le même domaine : équipes de recherche, partenariats techniques, interventions pédagogiques.</p>
-  <div class="cta-tags">
-    <span data-key="cta_tag1">Fabrication robotique</span>
-    <span data-key="cta_tag2">Ingénierie bois</span>
-    <span>Grasshopper / KukaPRC</span>
-    <span data-key="cta_tag4">Foresterie &amp; sylviculture</span>
-    <span data-key="cta_tag5">Formation technique</span>
-  </div>
 </section>
 
 <div class="lang-marker"><div class="lang-marker-grain"></div><span data-key="lang_marker"><span class="lm-white">Foresterie</span> <span class="lm-oak">Appliquée</span></span></div>
@@ -909,7 +920,7 @@
     <span class="eyebrow" data-key="local_eyebrow">Activité locale - Limousin</span>
     <h2 data-key="exploitation_h2">Exploitation forestière</h2>
     <p class="local-lede" data-key="exploitation_lede">Gestion, sylviculture, et coupes en Creuse (23), Corrèze (19) et Haute-Vienne (87).</p>
-    <div class="local-grid">
+        <div class="local-grid">
       <div>
         <ul class="local-list">
           <li data-key="expl_li1">Approche sylvicole innovante</li>
@@ -918,10 +929,6 @@
           <li data-key="expl_li4">Partenariat avec les associations locales engagées</li>
           <li data-key="expl_li5">Pépinière d'enrichissement dédiée</li>
         </ul>
-        <div class="callout">
-          <b data-key="expl_callout_title">Recrutement</b>
-          <span data-key="expl_callout_text">Vous êtes charpentier qualifié ? Rejoignez mon équipe ! Contactez-moi directement via les coordonnées en bas de page.</span>
-        </div>
       </div>
       <div class="photo-slot has-image">
         <img src="assets/structure-finished.jpg" alt="Grue forestière chargeant des grumes en forêt, Limousin" loading="lazy">
@@ -948,13 +955,19 @@
           <span data-key="elag_callout_text">100% d'engagement, 0% d'accident, 10 ans d'élagage et d'abattage complexe.<br>Contact direct : <a href="tel:+33768679555" class="inline-link">07 68 67 95 55</a></span>
         </div>
         <a href="devis.html" class="devis-cta" data-key="elag_devis_btn">Demander un devis</a>
+        <p style="margin-top:1.9rem;"><a href="chantiers.html" class="inline-link" data-key="elag_chantiers_link">Voir les chantiers réalisés</a></p>
       </div>
       <div class="photo-slot has-image natural">
-        <img src="assets/publication.jpg" alt="Nicolas Rohart s'éloignant en sous-bois, silhouette entre les fûts" loading="lazy">
+        <img src="assets/elagage-traction-grange.jpg" alt="Camion forestier à grue devant une grange en pierre" loading="lazy">
+        <img src="assets/elagage-evacuation-branches.jpg" alt="Évacuation de branches à la grue forestière" loading="lazy">
       </div>
     </div>
   </div>
 </section>
+
+<div class="closing-photo">
+  <img src="assets/publication.jpg" alt="Nicolas Rohart s'éloignant en sous-bois, silhouette entre les fûts" loading="lazy">
+</div>
 
 <footer>
   <div class="contact-inner">
@@ -1061,13 +1074,14 @@
       nav_exploitation: "Forest Management",
       nav_devis: "Request a quote",
       elag_devis_btn: "Request a quote",
+      elag_chantiers_link: "See completed projects",
       la_copy_btn: "Copy",
       hero_h1: "From standing tree<br>to finished <em>structure</em>",
       hero_lede: "I operate across the entire timber value chain - forest management and harvesting, computational design, robotic shaping of curved timber, and on-site construction - including the digital workflows that connect each stage.",
       hero_exp: "EXPERIENCE<b>15 years, full chain</b>",
       hero_looking: "LOOKING FOR<b>R&D partnership</b>",
       hero_open: "OPEN TO<b>Worldwide</b>",
-      intro_p: "Trained in forestry at school, in the forest by living in it, and finally in robotics alongside an expert, I can now just as readily sow an enrichment tree nursery as generate machining toolpaths for a robot. Depending on what is needed, I can follow construction projects all the way through, from the trees I select in the forest to the finished structure.",
+      intro_p: "Trained in forestry at school, in the forest by living in it, and finally in robotics alongside an expert, I can now just as readily sow an enrichment tree nursery as generate machining toolpaths for a robot. Depending on what is needed, I can follow a construction project all the way through, with a qualified carpenter, from the trees I select in the forest to the finished structure.",
       chain_eyebrow: "The Chain",
       chain_h2: "Five stages, one hand throughout",
       chain_p: "Each stage below feeds the next - a tree felled in stage two becomes a robot toolpath in stage four, and a client's home in stage five stands in the same landscape assessed in stage one.",
@@ -1080,7 +1094,7 @@
       step2_eyebrow: "Harvest &amp; Extraction",
       step2_h3: "Felling and skidding, hands-on",
       step2_p1: "I fell and extract the timber myself - it keeps me in direct feedback with the rest of the chain. What a tree does in the forest, on the workshop floor, and on a real construction site all shape each other, within the same workflow - not just on paper.",
-      step2_p2: "Twelve years ago, I built my own skidding vehicle from a repurposed 4x4 fire-service truck chassis - new bodywork, crane installation, structural welding, taken through individual type-approval for road use. This original forestry machine lets me control the quality of the work on site, precisely.",
+      step2_p2: "Twelve years ago, I built my own skidding vehicle from a repurposed 4x4 fire-service truck chassis - new bodywork, crane installation, structural welding, taken through type-approval for road use. This original forestry machine lets me control the quality of the work on site, precisely.",
       step3_h3: "Round, curved timber structures, drawn to fit the site",
       step3_p1: "I design proposals for custom timber buildings from real trunks - round, naturally curved - fitted to each client's brief and often to an existing building I need to design around. Robotic shaping (stage four) makes this kind of natural, non-standard geometry buildable at a fraction of the previous cost.",
       step3_p2: "I draw in Rhino 3D, then bring the proposal to life in TwinMotion - compositing the new structure into a photogrammetry scan of the existing site - for near-photorealistic renders that clients can already picture themselves in.",
@@ -1092,8 +1106,8 @@
       step4_callout_text: "A 3m trunk becomes a 600,000-point cloud in 3.5 minutes - fast enough for continuous production, with no downtime reloading the timber.",
       prod_link: "&rarr; view more projects",
       step5_eyebrow: "On-Site Building",
-      step5_h3: "From foundation to finished frame",
-      step5_p1: "I offer two distinct arrangements: custom-cut timber pieces to supplied plans, or hands-on involvement through to completion. For on-site assembly, I work with qualified carpenters, and help with the choice of other trades involved.<br>A tree can stand for centuries on nothing but water, air, soil and light - hard to find better inspiration for building something ecological and sustainable.",
+      step5_h3: "From workshop to assembled frame",
+      step5_p1: "Two ways to build together. If you are a carpenter: I cut the pieces for your project by robot, to your plans, and I can join you for assembly. If you are leading a construction project: I can follow it all the way through, with a qualified carpenter and plans approved by a professional, and help you choose the other trades.<br>A tree can stand for centuries on nothing but water, air, soil and light - hard to find better inspiration for building something ecological and sustainable.",
       skills_eyebrow: "Technical Profile",
       skills_h2: "At a glance",
       skills_col1: "Forestry",
@@ -1108,7 +1122,6 @@
       skills_c3_li3: "Site installation",
       research_eyebrow: "Research &amp; Recognition",
       research_h2: "Where this work sits in the field",
-      research_p: "This is a small, fast-moving international research area. Here's where we fit in it.",
       research_card1_p: "Peer-reviewed article, <i>Construction Robotics</i> (Springer), on scan-to-trajectory robotic shaping of natural curved timber.",
       research_card2_eyebrow: "Aug 2026",
       research_card2_p: "Our work was presented to the CITA Copenhagen - Aarhus University - SDU Odense research network, dedicated to robotic free-form timber fabrication.",
@@ -1118,10 +1131,6 @@
       cta_eyebrow: "What I'm looking for",
       cta_h2: "Research teams and workshops asking the same question - ethical forestry, and wood transformation that's relevant.",
       cta_p: "Fifteen years running the full chain, forest to finished structure, with the software and robotics skills to take that further. Based in Limousin, close to a wild forest and a unique production site. Always glad to hear from people working on similar ground: research teams, technical exchange, guest teaching.",
-      cta_tag1: "Robotic fabrication",
-      cta_tag2: "Timber engineering",
-      cta_tag4: "Forestry &amp; silviculture",
-      cta_tag5: "Technical training",
       lang_marker: '<span class="lm-white">Applied</span> <span class="lm-oak">Forestry</span>',
       local_eyebrow: "Local Activity - Limousin",
       exploitation_h2: "Forest harvesting",
@@ -1132,7 +1141,7 @@
       expl_li4: "Partnerships with committed local associations",
       expl_li5: "Dedicated enrichment nursery",
       expl_callout_title: "Hiring",
-      expl_callout_text: "Are you a qualified carpenter? Join my team! Get in touch directly using the contact details at the bottom of the page.",
+      expl_callout_text: "Are you a qualified carpenter? Join the adventure and let's build differently, with wood as it is. Get in touch directly using the contact details at the bottom of the page.",
       elagage_h2: "Tree Pruning &amp; Complex Felling",
       elagage_lede: "Buildings, utility lines, specific operations: technical command and the experience of complex sites, for the tree in your garden.",
       elag_li1: "Directional felling",
@@ -1158,13 +1167,14 @@
       nav_exploitation: "Exploitation forestière",
       nav_devis: "Demander un devis",
       elag_devis_btn: "Demander un devis",
+      elag_chantiers_link: "Voir les chantiers réalisés",
       la_copy_btn: "Copier",
       hero_h1: "De l'arbre debout<br>à la <em>structure finie</em>",
       hero_lede: "J'interviens sur toute la filière du bois - gestion forestière, exploitation, conception numérique, façonnage robotisé des bois bruts et construction sur site.",
       hero_exp: "EXPÉRIENCE<b>15 ans de filière</b>",
       hero_looking: "RECHERCHE<b>Partenariat R&D</b>",
       hero_open: "OUVERT À<b>Monde</b>",
-      intro_p: "Formé à l'exploitation à l'école, à la forêt en y habitant et enfin à la robotique aux côtés d'un expert, je peux désormais aussi bien semer une pépinière forestière d'enrichissement que générer des trajectoires d'usinage pour un robot. Au besoin, je suis les projets de construction de bout en bout, des arbres que je choisis en forêt jusqu'à la structure finie.",
+      intro_p: "Formé à l'exploitation à l'école, à la forêt en y habitant et enfin à la robotique aux côtés d'un expert, je peux désormais aussi bien semer une pépinière forestière d'enrichissement que générer des trajectoires d'usinage pour un robot. Au besoin, je peux suivre un projet de construction de bout en bout, avec un charpentier qualifié, des arbres que je choisis en forêt jusqu'à la structure finie.",
       chain_eyebrow: "une filière",
       chain_h2: "Cinq étapes, une vision du début à la fin",
       chain_p: "Chaque étape ci-dessous nourrit la suivante - un arbre abattu à l'étape deux devient une trajectoire de robot à l'étape quatre, et la maison d'un client à l'étape cinq se dresse dans le paysage considéré à l'étape un.",
@@ -1177,7 +1187,7 @@
       step2_eyebrow: "Coupe &amp; Débardage",
       step2_h3: "La matière en direct",
       step2_p1: "Je bûcheronne et débarde les bois moi-même - ce qui me place en contact physique direct avec les fibres ligneuses, dès le départ. Ce qu'un arbre devient en forêt, à l'atelier, et sur un chantier de construction s'influencent mutuellement.",
-      step2_p2: "Il y a douze ans, j'ai construit mon propre engin de débardage à partir d'un châssis de camion 4x4 (service incendie reconverti) - carrosserie, installation d'une grue, soudure structurelle,... et enfin réception à titre isolé pour la circulation routière. Cette machine originale me permet de contrôler précisément la qualité du travail sur le site.",
+      step2_p2: "Il y a douze ans, j'ai construit mon propre engin de débardage à partir d'un châssis de camion 4x4 (service incendie reconverti) - carrosserie, installation d'une grue, soudure structurelle,... et enfin réception pour la circulation routière. Cette machine originale me permet de contrôler précisément la qualité du travail sur le site.",
       step3_h3: "Structures en bois ronds et courbes,<br>sur-mesure",
       step3_p1: "Je conçois les propositions de bâtiments à partir de troncs réels - leurs formes naturelles s'adaptent aux souhaits des clients, et réciproquement. Le façonnage robotisé (étape quatre) rend ce type de géométrie non standard réalisable pour une fraction du coût auparavant nécessaire.",
       step3_p2: "Je dessine sous Rhino 3D, puis donne vie aux propositions dans TwinMotion. Les nouvelles structures trouvent leur place dans les scans des sites réels, pour des rendus dans lesquels les clients peuvent déjà se projeter.",
@@ -1189,8 +1199,8 @@
       step4_callout_text: "Un tronc de 3 m devient un nuage de 600 000 points en 3,5 minutes - assez rapide pour une production en flux tendu, sans manutention intermédiaire du bois.",
       prod_link: "&rarr; voir plus de projets",
       step5_eyebrow: "Construction sur site",
-      step5_h3: "Des fondations à la structure finie",
-      step5_p1: "Je propose deux modalités distinctes à mes clients : la taille sur mesure des pièces de bois sur plans fournis ; ou le suivi complet du chantier de construction. Pour le montage sur site, je m'appuie sur la qualification de charpentiers expérimentés et j'accompagne le choix des autres corps de métier.<br>Un arbre tient debout plusieurs décennies, voire des siècles, juste avec de l'eau, de l'air, du sol et de la lumière - difficile de trouver meilleure source d'inspiration pour construire un bâtiment écologique et durable.",
+      step5_h3: "De l'atelier à la structure montée",
+      step5_p1: "Deux façons de construire ensemble. Vous êtes charpentier : je taille au robot les pièces de votre projet, sur vos plans, et je peux vous rejoindre au montage. Vous portez un projet de construction : je peux le suivre de bout en bout, avec un charpentier qualifié et des plans validés par un professionnel, et vous aider à choisir les autres artisans.<br>Un arbre tient debout plusieurs décennies, voire des siècles, juste avec de l'eau, de l'air, du sol et de la lumière - difficile de trouver meilleure source d'inspiration pour construire un bâtiment écologique et durable.",
       skills_eyebrow: "Profil technique",
       skills_h2: "En un coup d'œil",
       skills_col1: "Foresterie",
@@ -1205,7 +1215,6 @@
       skills_c3_li3: "Installation sur site",
       research_eyebrow: "Recherche &amp; Reconnaissance",
       research_h2: "La place de ce travail dans le domaine",
-      research_p: "Un champ de recherche international restreint, et en plein essor.",
       research_card1_p: "Article évalué par des pairs, <i>Construction Robotics</i> (Springer), sur le façonnage robotisé des bois courbes, trajectoires produites à partir de scan 3D.",
       research_card2_eyebrow: "Août 2026",
       research_card2_p: "Travaux présentés au réseau de recherche CITA Copenhague - Université d'Aarhus - SDU Odense, dédié à la fabrication robotisée de formes libres en bois.",
@@ -1215,10 +1224,6 @@
       cta_eyebrow: "Ce que je recherche",
       cta_h2: "Des personnes qui se posent les mêmes questions - foresterie éthique et transformation du bois pertinente -<br>et qui veulent agir.",
       cta_p: "Quinze ans à parcourir toute la chaîne, de la forêt à la structure finie, et maintenant les compétences logicielles et robotiques pour aller plus loin. Installé en Limousin, entre forêt sauvage et site de production atypique, je serais heureux d'échanger avec des personnes travaillant sur le même domaine : équipes de recherche, partenariats techniques, interventions pédagogiques.",
-      cta_tag1: "Fabrication robotique",
-      cta_tag2: "Ingénierie bois",
-      cta_tag4: "Foresterie &amp; sylviculture",
-      cta_tag5: "Formation technique",
       lang_marker: '<span class="lm-white">Foresterie</span> <span class="lm-oak">Appliquée</span>',
       local_eyebrow: "Activité locale - Limousin",
       exploitation_h2: "Exploitation forestière",
@@ -1229,7 +1234,7 @@
       expl_li4: "Partenariat avec les associations locales engagées",
       expl_li5: "Pépinière d'enrichissement dédiée",
       expl_callout_title: "Recrutement",
-      expl_callout_text: "Vous êtes charpentier qualifié ? Rejoignez mon équipe ! Contactez-moi directement via les coordonnées en bas de page.",
+      expl_callout_text: "Vous êtes charpentier qualifié ? Rejoignez l'aventure et construisons autrement, avec le bois tel qu'il est. Contactez-moi directement via les coordonnées en bas de page.",
       elagage_h2: "Élagage et abattage complexe",
       elagage_lede: "Bâtiments, réseaux, opérations spécifiques : maîtrise technique et expérience des chantiers complexes, pour l'arbre de votre jardin.",
       elag_li1: "Abattage directionnel",

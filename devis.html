@@ -50,7 +50,7 @@
   }
 
   :root{
-    --ink:#211D17; --paper:#F6F3EC; --paper-dim:#EDE8DC;
+    --ink:#211D17; --paper:#FBFAF7; --paper-dim:#F2EFE8;
     --forest:#202B24; --forest-2:#283630; --oak:#A9784A; --oak-soft:#C89A69;
     --steel:#52646B; --alert:#F04E23; --line:#CFC6B2;
   }
@@ -148,6 +148,7 @@
     outline:none; border-color:var(--oak);
     box-shadow:0 0 0 3px rgba(169,120,74,0.22);
   }
+  .lab .req{ color:var(--alert); font-weight:700; }
   .hp{position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden;}
 
   button[type=submit]{
@@ -235,23 +236,28 @@
     <label class="hp"><input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off"></label>
 
     <label>
-      <span class="lab" data-key="lab_nom">Nom</span>
+      <span class="lab"><span data-key="lab_nom">Nom</span> <span class="req" aria-hidden="true">*</span></span>
       <input type="text" name="nom" required autocomplete="name">
     </label>
 
     <label>
-      <span class="lab" data-key="lab_adresse">Adresse</span>
+      <span class="lab"><span data-key="lab_adresse">Adresse</span> <span class="req" aria-hidden="true">*</span></span>
       <input type="text" name="adresse" required autocomplete="street-address">
     </label>
 
     <label>
-      <span class="lab" data-key="lab_telephone">Téléphone</span>
+      <span class="lab"><span data-key="lab_telephone">Téléphone</span> <span class="req" aria-hidden="true">*</span></span>
       <input type="tel" name="telephone" required autocomplete="tel" inputmode="tel">
     </label>
 
     <label>
+      <span class="lab" data-key="lab_email">E-mail</span>
+      <input type="email" name="email" autocomplete="email" inputmode="email">
+    </label>
+
+    <label>
       <span class="lab" data-key="lab_demande">Ce qu'il y a à faire</span>
-      <textarea name="demande" rows="4" required placeholder="Quelques mots suffisent." data-key-ph="placeholder_demande"></textarea>
+      <textarea name="demande" rows="4" placeholder="Quelques mots suffisent." data-key-ph="placeholder_demande"></textarea>
     </label>
 
     <button type="submit" data-key="btn_send">Envoyer</button>
@@ -300,6 +306,7 @@
       lab_nom: "Nom",
       lab_adresse: "Adresse",
       lab_telephone: "Téléphone",
+      lab_email: "E-mail",
       lab_demande: "Ce qu'il y a à faire",
       placeholder_demande: "Quelques mots suffisent.",
       btn_send: "Envoyer",
@@ -323,6 +330,7 @@
       lab_nom: "Name",
       lab_adresse: "Address",
       lab_telephone: "Phone",
+      lab_email: "Email",
       lab_demande: "What needs doing",
       placeholder_demande: "A few words are enough.",
       btn_send: "Send",
@@ -392,10 +400,13 @@
     btn.disabled = true;
     btn.textContent = dict.btn_sending;
 
+    var payload = Object.fromEntries(new FormData(form));
+    if (!payload.email || !payload.email.trim()) { delete payload.email; } // e-mail facultatif : non envoyé s'il est vide
+
     fetch('https://api.web3forms.com/submit', {
       method: 'POST',
       headers: {'Content-Type':'application/json', 'Accept':'application/json'},
-      body: JSON.stringify(Object.fromEntries(new FormData(form)))
+      body: JSON.stringify(payload)
     })
     .then(function(r){ return r.json(); })
     .then(function(data){
