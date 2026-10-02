@@ -26,19 +26,129 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Nicolas Rohart",
-  "jobTitle": "Timber value-chain specialist - forestry to robotic fabrication",
-  "url": "https://nicolasrohart.com/",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Eymoutiers",
-    "addressRegion": "Haute-Vienne",
-    "addressCountry": "FR"
-  },
-  "knowsAbout": ["Robotic timber fabrication", "Forestry", "Curved timber construction", "Grasshopper", "KUKA robotics"],
-  "sameAs": [
-    "https://www.linkedin.com/in/nicolas-rohart-timber"
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://nicolasrohart.com/#site",
+      "url": "https://nicolasrohart.com/",
+      "name": "Nicolas Rohart",
+      "inLanguage": "fr",
+      "publisher": {
+        "@id": "https://nicolasrohart.com/#entreprise"
+      }
+    },
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://nicolasrohart.com/#entreprise",
+      "name": "Nicolas Rohart",
+      "url": "https://nicolasrohart.com/",
+      "description": "J'interviens sur toute la filière du bois - gestion forestière, exploitation, élagage et abattage complexe, modélisation 3D, façonnage robotisé et montage sur site.",
+      "image": "https://nicolasrohart.com/assets/og-cover.jpg",
+      "telephone": "+33768679555",
+      "email": "contact@nicolasrohart.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "5, rue Monte à Château",
+        "postalCode": "87120",
+        "addressLocality": "Eymoutiers",
+        "addressRegion": "Haute-Vienne",
+        "addressCountry": "FR"
+      },
+      "areaServed": [
+        {
+          "@type": "AdministrativeArea",
+          "name": "Creuse"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Corrèze"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Haute-Vienne"
+        }
+      ],
+      "founder": {
+        "@id": "https://nicolasrohart.com/#nicolas-rohart"
+      },
+      "makesOffer": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Gestion forestière"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Exploitation forestière"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Élagage"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Abattage complexe"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Modélisation 3D"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Façonnage robotisé"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Montage sur site"
+          }
+        }
+      ],
+      "sameAs": [
+        "https://www.linkedin.com/in/nicolas-rohart-timber"
+      ]
+    },
+    {
+      "@id": "https://nicolasrohart.com/#nicolas-rohart",
+      "@type": "Person",
+      "name": "Nicolas Rohart",
+      "jobTitle": "Timber value-chain specialist - forestry to robotic fabrication",
+      "url": "https://nicolasrohart.com/",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Eymoutiers",
+        "addressRegion": "Haute-Vienne",
+        "addressCountry": "FR"
+      },
+      "knowsAbout": [
+        "Robotic timber fabrication",
+        "Forestry",
+        "Curved timber construction",
+        "Grasshopper",
+        "KUKA robotics"
+      ],
+      "sameAs": [
+        "https://www.linkedin.com/in/nicolas-rohart-timber"
+      ]
+    }
   ]
 }
 </script>

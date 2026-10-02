@@ -224,7 +224,82 @@
     font-family:'IBM Plex Mono',monospace; font-size:0.66rem;
     letter-spacing:0.06em; color:var(--steel); border-top:1px solid var(--line);
   }
+
+  /* Autres chantiers à proximité : volontairement plus discret que « Retour au site » et « Demander un devis » */
+  .nearby{ margin:0 auto 1.8rem; text-align:center; }
+  .nearby-title{
+    font-family:'IBM Plex Mono',monospace; font-size:0.66rem; font-weight:500;
+    letter-spacing:0.08em; text-transform:uppercase; color:var(--steel);
+    margin-bottom:0.5rem;
+  }
+  .nearby-list{ display:flex; flex-wrap:wrap; justify-content:center; gap:0.4rem; list-style:none; margin:0; padding:0; }
+  .nearby-list a{
+    display:inline-block; font-size:0.74rem; color:var(--forest); text-decoration:none;
+    border:1px solid var(--line); border-radius:1rem; padding:0.22rem 0.7rem;
+    transition:border-color 0.15s ease, color 0.15s ease;
+  }
+  .nearby-list a:hover{ border-color:var(--oak); color:var(--oak); }
+  .nearby-list a.nearby-all{ color:var(--steel); border-style:dashed; }
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://nicolasrohart.com/chantiers/le-chatenet-en-dognon.html",
+      "url": "https://nicolasrohart.com/chantiers/le-chatenet-en-dognon.html",
+      "name": "Construction bois au Châtenet-en-Dognon (87) — Chantier réalisé | Nicolas Rohart",
+      "description": "Soutien sur un chantier de construction d'une terrasse en bois ronds au Châtenet-en-Dognon (87), près de Saint-Martin-Terressus et Saint-Priest-Taurion. Chantier réalisé par Nicolas Rohart.",
+      "inLanguage": "fr",
+      "isPartOf": {
+        "@id": "https://nicolasrohart.com/#site"
+      },
+      "about": {
+        "@id": "https://nicolasrohart.com/#entreprise"
+      },
+      "contentLocation": {
+        "@type": "Place",
+        "name": "Le Châtenet-en-Dognon (87)",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Le Châtenet-en-Dognon",
+          "addressRegion": "Haute-Vienne",
+          "addressCountry": "FR"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 45.9053,
+          "longitude": 1.5025
+        }
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Accueil",
+          "item": "https://nicolasrohart.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Chantiers réalisés",
+          "item": "https://nicolasrohart.com/chantiers.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Le Châtenet-en-Dognon",
+          "item": "https://nicolasrohart.com/chantiers/le-chatenet-en-dognon.html"
+        }
+      ]
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -277,6 +352,16 @@
     <a href="../devis.html" class="devis-cta" data-key="devis_btn">Demander un devis</a>
   </div>
 
+  <nav class="nearby" aria-label="Autres chantiers à proximité">
+    <p class="nearby-title" data-key="nearby_title">Autres chantiers à proximité</p>
+    <ul class="nearby-list">
+      <li><a href="saint-leonard-de-noblat.html">Saint-Léonard-de-Noblat (87)</a></li>
+      <li><a href="masleon.html">Masléon (87)</a></li>
+      <li><a href="saint-bonnet-briance.html">Saint-Bonnet-Briance (87)</a></li>
+      <li><a href="../chantiers.html" class="nearby-all" data-key="nearby_all">Tous les chantiers &rarr;</a></li>
+    </ul>
+  </nav>
+
 </main>
 
 <footer><span data-key="footer">Nicolas Rohart EI &middot; SIREN 528 893 597 &middot; Eymoutiers, Haute-Vienne &middot; </span><a href="../index.html#mentions" data-key="footer_link">Mentions légales</a></footer>
@@ -286,6 +371,8 @@
 
   var I18N = {
     fr: {
+      nearby_title: "Autres chantiers à proximité",
+      nearby_all: "Tous les chantiers &rarr;",
       back_cta: "<span class='back-arrow'>&larr;</span> Retour au site",
       back_cta_bottom: "<span class='back-arrow'>&larr;</span> Retour au site",
       eyebrow: "Élagage &middot; Abattage &middot; Construction bois",
@@ -301,6 +388,8 @@
       footer_link: "Mentions légales"
     },
     en: {
+      nearby_title: "Other projects nearby",
+      nearby_all: "All projects &rarr;",
       back_cta: "<span class='back-arrow'>&larr;</span> Back to the site",
       back_cta_bottom: "<span class='back-arrow'>&larr;</span> Back to the site",
       eyebrow: "Tree Pruning &middot; Felling &middot; Timber Construction",

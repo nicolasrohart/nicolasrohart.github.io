@@ -224,7 +224,82 @@
     font-family:'IBM Plex Mono',monospace; font-size:0.66rem;
     letter-spacing:0.06em; color:var(--steel); border-top:1px solid var(--line);
   }
+
+  /* Autres chantiers à proximité : volontairement plus discret que « Retour au site » et « Demander un devis » */
+  .nearby{ margin:0 auto 1.8rem; text-align:center; }
+  .nearby-title{
+    font-family:'IBM Plex Mono',monospace; font-size:0.66rem; font-weight:500;
+    letter-spacing:0.08em; text-transform:uppercase; color:var(--steel);
+    margin-bottom:0.5rem;
+  }
+  .nearby-list{ display:flex; flex-wrap:wrap; justify-content:center; gap:0.4rem; list-style:none; margin:0; padding:0; }
+  .nearby-list a{
+    display:inline-block; font-size:0.74rem; color:var(--forest); text-decoration:none;
+    border:1px solid var(--line); border-radius:1rem; padding:0.22rem 0.7rem;
+    transition:border-color 0.15s ease, color 0.15s ease;
+  }
+  .nearby-list a:hover{ border-color:var(--oak); color:var(--oak); }
+  .nearby-list a.nearby-all{ color:var(--steel); border-style:dashed; }
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://nicolasrohart.com/chantiers/saint-leonard-de-noblat.html",
+      "url": "https://nicolasrohart.com/chantiers/saint-leonard-de-noblat.html",
+      "name": "Débit et évacuation d'arbres tombés à Saint-Léonard-de-Noblat (87) — Chantier réalisé | Nicolas Rohart",
+      "description": "Débit, fente et évacuation de 2 chênes rouges tombés lors d'une tempête à Saint-Léonard-de-Noblat (87), tout proche de Royères. Chantier réalisé par Nicolas Rohart.",
+      "inLanguage": "fr",
+      "isPartOf": {
+        "@id": "https://nicolasrohart.com/#site"
+      },
+      "about": {
+        "@id": "https://nicolasrohart.com/#entreprise"
+      },
+      "contentLocation": {
+        "@type": "Place",
+        "name": "Saint-Léonard-de-Noblat (87)",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Saint-Léonard-de-Noblat",
+          "addressRegion": "Haute-Vienne",
+          "addressCountry": "FR"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 45.8446,
+          "longitude": 1.499
+        }
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Accueil",
+          "item": "https://nicolasrohart.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Chantiers réalisés",
+          "item": "https://nicolasrohart.com/chantiers.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Saint-Léonard-de-Noblat",
+          "item": "https://nicolasrohart.com/chantiers/saint-leonard-de-noblat.html"
+        }
+      ]
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -277,6 +352,16 @@
     <a href="../devis.html" class="devis-cta" data-key="devis_btn">Demander un devis</a>
   </div>
 
+  <nav class="nearby" aria-label="Autres chantiers à proximité">
+    <p class="nearby-title" data-key="nearby_title">Autres chantiers à proximité</p>
+    <ul class="nearby-list">
+      <li><a href="le-chatenet-en-dognon.html">Le Châtenet-en-Dognon (87)</a></li>
+      <li><a href="masleon.html">Masléon (87)</a></li>
+      <li><a href="saint-bonnet-briance.html">Saint-Bonnet-Briance (87)</a></li>
+      <li><a href="../chantiers.html" class="nearby-all" data-key="nearby_all">Tous les chantiers &rarr;</a></li>
+    </ul>
+  </nav>
+
   <h2 class="chapter-title" data-key="photo_h2">Reconnaissez-vous les Chênes rouges&nbsp;?</h2>
 
   <div class="species-photo">
@@ -295,6 +380,8 @@
 
   var I18N = {
     fr: {
+      nearby_title: "Autres chantiers à proximité",
+      nearby_all: "Tous les chantiers &rarr;",
       back_cta: "<span class='back-arrow'>&larr;</span> Retour au site",
       back_cta_bottom: "<span class='back-arrow'>&larr;</span> Retour au site",
       eyebrow: "Élagage &middot; Abattage Complexe &middot; Exploitation forestière",
@@ -312,6 +399,8 @@
       footer_link: "Mentions légales"
     },
     en: {
+      nearby_title: "Other projects nearby",
+      nearby_all: "All projects &rarr;",
       back_cta: "<span class='back-arrow'>&larr;</span> Back to the site",
       back_cta_bottom: "<span class='back-arrow'>&larr;</span> Back to the site",
       eyebrow: "Tree Pruning &middot; Complex Felling &middot; Forestry",
