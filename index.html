@@ -794,7 +794,6 @@
     <a href="#hero" data-key="nav_construction">Construction &amp; Robotique</a>
     <a href="#abattages-complexes" data-key="nav_elagage">Élagage &amp; abattage complexe</a>
     <a href="#exploitation-forestiere" data-key="nav_exploitation">Exploitation forestière</a>
-    <a href="devis.html" class="la-devis" data-key="nav_devis">Demander un devis</a>
   </nav>
   <div class="la-contact">
     <a href="tel:+33768679555">07 68 67 95 55</a>
@@ -842,20 +841,16 @@
     <div class="hero-fields">
       <div>BASE<b>Limousin, France</b></div>
       <div data-key="hero_exp">EXPÉRIENCE<b>15 ans de filière</b></div>
-      <div data-key="hero_looking">RECHERCHE<b>Partenariat R&D</b></div>
-      <div data-key="hero_open">OUVERT À<b>Monde</b></div>
     </div>
   </div>
 </header>
 
 <div class="intro reveal">
-  <p data-key="intro_p">Formé à l'exploitation à l'école, à la forêt en y habitant et enfin à la robotique aux côtés d'un expert, je peux désormais aussi bien semer une pépinière forestière d'enrichissement que générer des trajectoires d'usinage pour un robot. Au besoin, je fournis et taille le bois d'un projet de construction, des arbres que je choisis en forêt jusqu'aux pièces prêtes à monter, pour un charpentier qualifié.</p>
+  <p data-key="intro_p">Formé à l'exploitation à l'école, à la forêt en y habitant et enfin à la robotique aux côtés d'un expert, je peux désormais aussi bien semer une pépinière forestière d'enrichissement que générer des trajectoires d'usinage pour un robot.</p>
 </div>
 
 <section class="section-label reveal">
-  <span class="eyebrow" data-key="chain_eyebrow">une filière</span>
   <h2 data-key="chain_h2">Cinq étapes, une vision du début à la fin</h2>
-  <p data-key="chain_p">Chaque étape ci-dessous nourrit la suivante - un arbre abattu à l'étape deux devient une trajectoire de robot à l'étape quatre, et la maison d'un client à l'étape cinq se dresse dans le paysage considéré à l'étape un.</p>
 </section>
 
 <div class="chain">
@@ -1158,6 +1153,42 @@
       }
     });
   });
+
+  /* --- correctif du 11/10/2026 : arrivée directe sur une ancre (QR code, lien
+     depuis une autre page, lien partagé) ---
+     Le correctif du 10/09 ne traite que le clic sur un lien interne. Quand on
+     arrive avec #ancre dans l'adresse, le navigateur saute tout de suite à la
+     section, puis les polices et les photos se chargent au-dessus et la
+     repoussent vers le bas : on atterrit sur la section précédente (constaté
+     sur téléphone). On recale donc la page sur l'ancre tant que la mise en page
+     bouge, et on s'arrête dès que le visiteur touche, clique ou fait défiler
+     l'écran lui-même, ou au bout de 6 secondes. Rien ne se passe sans ancre
+     dans l'adresse, ni sur un rechargement ou un retour arrière. --- */
+  (function(){
+    var id = decodeURIComponent(location.hash.slice(1));
+    if(!id) return;
+    var target = document.getElementById(id);
+    if(!target) return;
+    var nav = (performance.getEntriesByType && performance.getEntriesByType('navigation')[0]) || null;
+    if(nav && nav.type && nav.type !== 'navigate') return;
+    var root = document.documentElement, stopped = false, ro = null;
+    root.style.scrollBehavior = 'auto';
+    function align(){ if(!stopped) target.scrollIntoView({block:'start'}); }
+    function quit(){
+      if(stopped) return;
+      stopped = true;
+      if(ro) ro.disconnect();
+      root.style.scrollBehavior = '';
+    }
+    ['wheel','touchstart','keydown','mousedown'].forEach(function(ev){
+      window.addEventListener(ev, quit, {passive:true});
+    });
+    if('ResizeObserver' in window){ ro = new ResizeObserver(align); ro.observe(document.body); }
+    if(document.fonts && document.fonts.ready) document.fonts.ready.then(align);
+    window.addEventListener('load', function(){ align(); setTimeout(align, 300); });
+    setTimeout(quit, 6000);
+    align();
+  })();
 </script>
 
 <style>
@@ -1183,19 +1214,14 @@
       nav_construction: "Construction &amp; Robotics",
       nav_elagage: "Tree Pruning &amp; Complex Felling",
       nav_exploitation: "Forest Management",
-      nav_devis: "Request a quote",
       elag_devis_btn: "Request a quote",
       elag_chantiers_link: "See completed projects",
       la_copy_btn: "Copy",
       hero_h1: "From standing tree<br>to finished <em>structure</em>",
       hero_lede: "I operate across the entire timber value chain - forest management and harvesting, 3D modelling, robotic shaping of curved timber, and on-site assembly - including the digital workflows that connect each stage.",
       hero_exp: "EXPERIENCE<b>15 years, full chain</b>",
-      hero_looking: "LOOKING FOR<b>R&D partnership</b>",
-      hero_open: "OPEN TO<b>Worldwide</b>",
-      intro_p: "Trained in forestry at school, in the forest by living in it, and finally in robotics alongside an expert, I can now just as readily sow an enrichment tree nursery as generate machining toolpaths for a robot. Depending on what is needed, I supply and cut the timber for a construction project, from the trees I select in the forest to pieces ready to assemble, for a qualified carpenter.",
-      chain_eyebrow: "The Chain",
+      intro_p: "Trained in forestry at school, in the forest by living in it, and finally in robotics alongside an expert, I can now just as readily sow an enrichment tree nursery as generate machining toolpaths for a robot.",
       chain_h2: "Five stages, one hand throughout",
-      chain_p: "Each stage below feeds the next - a tree felled in stage two becomes a robot toolpath in stage four, and a client's home in stage five stands in the same landscape assessed in stage one.",
       step1_eyebrow: "Forest &amp; Silviculture",
       step1_h3: "Managing forest for the world it becomes",
       step1_p1: "I work independently, across the whole process - forest management, felling, every stage of timber transformation, and sale. The goal is not short-term extraction, but ensuring that forests remain living, resilient ecosystems capable of supporting future generations despite existential obstacles: climate change, increasing human pressure, and the persistent belief that incremental adjustments will be enough.",
@@ -1276,19 +1302,14 @@
       nav_construction: "Construction &amp; Robotique",
       nav_elagage: "Élagage &amp; abattage complexe",
       nav_exploitation: "Exploitation forestière",
-      nav_devis: "Demander un devis",
       elag_devis_btn: "Demander un devis",
       elag_chantiers_link: "Voir les chantiers réalisés",
       la_copy_btn: "Copier",
       hero_h1: "De l'arbre debout<br>à la <em>structure finie</em>",
       hero_lede: "J'interviens sur toute la filière du bois - gestion forestière, exploitation, modélisation 3D, façonnage robotisé des bois bruts et montage sur site.",
       hero_exp: "EXPÉRIENCE<b>15 ans de filière</b>",
-      hero_looking: "RECHERCHE<b>Partenariat R&D</b>",
-      hero_open: "OUVERT À<b>Monde</b>",
-      intro_p: "Formé à l'exploitation à l'école, à la forêt en y habitant et enfin à la robotique aux côtés d'un expert, je peux désormais aussi bien semer une pépinière forestière d'enrichissement que générer des trajectoires d'usinage pour un robot. Au besoin, je fournis et taille le bois d'un projet de construction, des arbres que je choisis en forêt jusqu'aux pièces prêtes à monter, pour un charpentier qualifié.",
-      chain_eyebrow: "une filière",
+      intro_p: "Formé à l'exploitation à l'école, à la forêt en y habitant et enfin à la robotique aux côtés d'un expert, je peux désormais aussi bien semer une pépinière forestière d'enrichissement que générer des trajectoires d'usinage pour un robot.",
       chain_h2: "Cinq étapes, une vision du début à la fin",
-      chain_p: "Chaque étape ci-dessous nourrit la suivante - un arbre abattu à l'étape deux devient une trajectoire de robot à l'étape quatre, et la maison d'un client à l'étape cinq se dresse dans le paysage considéré à l'étape un.",
       step1_eyebrow: "Forêt &amp; Sylviculture",
       step1_h3: "Soigner la forêt pour le monde qu'elle devient",
       step1_p1: "Je travaille en indépendant, sur l'ensemble du processus - gestion forestière, abattage, débardage, transformation du bois, et vente. L'objectif n'est pas d'extraire à court terme, mais de garantir que les forêts restent des écosystèmes vivants et résilients, capables de soutenir les générations futures malgré des obstacles existentiels : le changement climatique, une pression humaine croissante, et la croyance persistante que des ajustements progressifs suffiront.",
